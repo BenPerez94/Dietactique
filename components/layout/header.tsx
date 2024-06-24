@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import logo from "@/public/logo.png";
+import logo from "@/public/logo-min.png";
 
 import {
    NavigationMenu,
@@ -19,21 +19,21 @@ import Link from "next/link";
 export default function Header() {
    return (
       <header className="border border-b fixed w-full bg-background shadow-sm z-50">
-         <div className="flex sm:h-32 h-24 max-w-7xl m-auto justify-between">
+         <div className="flex sm:h-32 h-24 max-w-full px-12 m-auto justify-between">
             <div className="p-2 py-5 sm:hidden ">
                <Menu size={60} />
             </div>
-            <div className=" sm:ml-3 p-3 sm:flex-1">
+            <div className=" p-3 sm:flex-none">
                <Link href="/">
                   <Image
                      src={logo}
                      alt=""
                      priority={true}
-                     className="h-full w-auto sm:min-w-32"
+                     className="h-full w-auto sm:min-w-36 pt-2"
                   />
                </Link>
             </div>
-            <div className="sm:block hidden">
+            <div className="sm:block sm:flex-1 hidden">
                <nav className="py-11">
                   <ul className="flex lg:mr-60 font-bold">
                      <li className="  p-3 mr-12">
@@ -63,7 +63,7 @@ export default function Header() {
                   </ul>
                </nav>
             </div>
-            <div className="flex-1 py-12 pr-3 md:block hidden">
+            <div className="flex-none py-12 pr-3 md:block hidden">
                <div className=" relative flex">
                   <Search
                      size={18}
@@ -73,7 +73,7 @@ export default function Header() {
                   <input
                      type="search"
                      placeholder="Rechercher..."
-                     className="pl-8"
+                     className="pl-8 w-96"
                   />
                </div>
             </div>
