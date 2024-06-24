@@ -16,7 +16,7 @@ export default function Home() {
                <Image
                   src={logo}
                   alt="logo du site"
-                  className="m-auto w-[550px] pt-24 pb-12"
+                  className="m-auto w-[750px] pt-24 pb-6"
                />
                <p className="m-auto text-background text-xl max-w-3xl text-center">
                   Mon objectif : Vous accompagner vers la réussite de votre
