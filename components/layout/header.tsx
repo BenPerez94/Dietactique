@@ -23,13 +23,13 @@ export default function Header() {
             <div className="p-2 py-5 sm:hidden ">
                <Menu size={60} />
             </div>
-            <div className=" p-3 sm:flex-none">
+            <div className="pt-5 sm:flex-none">
                <Link href="/">
                   <Image
                      src={logo}
                      alt=""
                      priority={true}
-                     className="h-full w-auto sm:min-w-36 pt-2"
+                     className="h-auto w-72"
                   />
                </Link>
             </div>
