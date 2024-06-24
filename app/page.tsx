@@ -3,17 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 import test from "@/public/test.jpg";
 import insta from "@/public/instagram.png";
-import logo from "@/public/logo.png";
+import logo from "@/public/logo.svg";
 
 export default function Home() {
    return (
       <div className="mt-32 ">
          {/* HERO */}
 
-         <div className="flex flex-col py-32  bg-hero-pattern bg-cover bg-center relative">
-            <div className="absolute inset-0 bg-foreground opacity-90 z-10"></div>
+         <div className="flex flex-col pb-32  bg-hero-pattern bg-cover bg-center relative">
+            <div className="absolute inset-0 bg-foreground opacity-80 z-10"></div>
             <div className="z-20">
-               <Image src={logo} alt="logo du site" className="m-auto" />
+               <Image
+                  src={logo}
+                  alt="logo du site"
+                  className="m-auto w-[550px] pt-24 pb-12"
+               />
                <p className="m-auto text-background text-xl max-w-3xl text-center">
                   Mon objectif : Vous accompagner vers la réussite de votre
                   perte de poids grâce à une alimentation saine, équilibrée et
@@ -24,7 +28,7 @@ export default function Home() {
 
          {/* CATEGORIES PREVIEW */}
 
-         <div className="flex flex-col lg:flex-row max-w-7xl m-auto py-6 mb-6">
+         <div className="flex flex-col lg:flex-row max-w-7xl m-auto py-6 mb-6 px-3">
             <div className="flex-2">
                <div>
                   <h1>Nutrition</h1>

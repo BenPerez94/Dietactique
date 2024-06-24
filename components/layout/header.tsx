@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import logo from "@/public/logo-min.png";
+import logo from "@/public/logo-min.svg";
 
 import {
    NavigationMenu,
@@ -23,13 +23,13 @@ export default function Header() {
             <div className="p-2 py-5 sm:hidden ">
                <Menu size={60} />
             </div>
-            <div className="pt-5 sm:flex-none">
+            <div className="pt-1 sm:flex-none">
                <Link href="/">
                   <Image
                      src={logo}
                      alt=""
                      priority={true}
-                     className="h-auto w-72"
+                     className="h-auto w-72 mr-12"
                   />
                </Link>
             </div>
