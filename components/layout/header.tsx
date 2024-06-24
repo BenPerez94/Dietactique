@@ -36,26 +36,26 @@ export default function Header() {
             <div className="sm:block sm:flex-1 hidden">
                <nav className="py-11">
                   <ul className="flex lg:mr-60 font-bold">
-                     <li className="  p-3 mr-12">
+                     <li className="  p-2 mr-12">
                         <Link
                            href="/categories"
-                           className="p-3 rounded border border-background hover:border-black"
+                           className="p-3 rounded border border-background text-lg hover:border-black"
                         >
                            Nutrition
                         </Link>
                      </li>
-                     <li className="p-3 mr-12">
+                     <li className="p-2 mr-12">
                         <Link
                            href="/"
-                           className="p-3  rounded border border-background hover:border-black"
+                           className="p-3  rounded border border-background text-lg hover:border-black"
                         >
                            Sport
                         </Link>
                      </li>
-                     <li className="p-3 mr-12">
+                     <li className="p-2 mr-12">
                         <Link
                            href="/"
-                           className=" p-3  rounded border border-background hover:border-black"
+                           className=" p-3  rounded border border-background text-lg hover:border-black"
                         >
                            Santé
                         </Link>

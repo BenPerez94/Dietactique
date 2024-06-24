@@ -8,8 +8,8 @@ export default function Article() {
    return (
       <div className="flex mt-32 justify-between max-w-7xl m-auto">
          <div className="flex-1 p-6 pt-12">
-            <h2 className="text-3xl">Titre de l'article</h2>
-            <p>
+            <h2 className="text-4xl">Titre de l'article</h2>
+            <p className="text-lg">
                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                Pariatur quaerat voluptatum architecto ea velit blanditiis
                necessitatibus odio? Illo maxime impedit nisi repudiandae fuga,
@@ -26,7 +26,7 @@ export default function Article() {
             <br />
             <Image src={test} alt="" />
             <br />
-            <p>
+            <p className="text-lg">
                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                Pariatur quaerat voluptatum architecto ea velit blanditiis
                necessitatibus odio? Illo maxime impedit nisi repudiandae fuga,

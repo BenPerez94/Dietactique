@@ -8,7 +8,7 @@ export default function Footer() {
       <div className=" bg-foreground flex flex-col">
          <div className="max-w-7xl m-auto flex flex-col justify-center py-6">
             <div className="m-auto mb-6">
-               <Image src={logo} alt="logo du site" className="w-72" />
+               <Image src={logo} alt="logo du site" className="w-[850px]" />
             </div>
             <div className="flex gap-2 m-auto">
                <a href="">
