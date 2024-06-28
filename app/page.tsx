@@ -34,7 +34,7 @@ export default async function Home() {
       {/* CATEGORIES PREVIEW */}
 
       <div className="flex flex-col lg:flex-row max-w-7xl m-auto py-6 mb-6 px-3">
-        <div className="flex-2">
+        <div className="flex-2 min-w-[849px]">
           {categories.map((category) => (
             <div key={category.id}>
               <h1>{category.name}</h1>
@@ -51,7 +51,7 @@ export default async function Home() {
                     />
                     <h2>{article.title}</h2>
                     <p className="min-h-24">
-                      {article.contents[0].text.substring(0, 250)}...
+                      {article.contents?.[0]?.text?.substring(0, 250) ?? ""}...
                     </p>
                     <Link
                       href={`/article/${article.id}`}
