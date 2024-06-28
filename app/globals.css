@@ -5,98 +5,98 @@
 @tailwind utilities;
 
 @layer base {
-   :root {
-      --background: 45 50% 98%;
-      --foreground: 51 33% 8%;
+  :root {
+    --background: 45 50% 98%;
+    --foreground: 51 33% 8%;
 
-      --card: 0 0% 100%;
-      --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-      --popover: 0 0% 100%;
-      --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-      --primary: 222.2 47.4% 11.2%;
-      --primary-foreground: 210 40% 98%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-      --secondary: 210 40% 96.1%;
-      --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-      --muted: 51 34% 9%;
-      --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 51 34% 9%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-      --accent: 54 69% 71%;
-      --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 54 69% 71%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-      --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-      --border: 214.3 31.8% 91.4%;
-      --input: 214.3 31.8% 91.4%;
-      --ring: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
-      --radius: 0.5rem;
-   }
+    --radius: 0.5rem;
+  }
 
-   .dark {
-      --background: 222.2 84% 4.9%;
-      --foreground: 210 40% 98%;
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-      --card: 222.2 84% 4.9%;
-      --card-foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-      --popover: 222.2 84% 4.9%;
-      --popover-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-      --primary: 210 40% 98%;
-      --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-      --secondary: 217.2 32.6% 17.5%;
-      --secondary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-      --muted: 217.2 32.6% 17.5%;
-      --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-      --accent: 217.2 32.6% 17.5%;
-      --accent-foreground: 210 40% 98%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-      --border: 217.2 32.6% 17.5%;
-      --input: 217.2 32.6% 17.5%;
-      --ring: 212.7 26.8% 83.9%;
-   }
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
 }
 
 @layer base {
-   * {
-      @apply border-border;
-      font-family: "Radio Canada", sans-serif;
-      color: #1a180d;
-   }
-   body {
-      @apply bg-background text-foreground;
-      font-family: "Radio Canada", sans-serif;
-   }
-   input {
-      @apply border rounded font-light py-1 px-3  w-full mb-4;
-   }
+  * {
+    @apply border-border;
+    font-family: "Radio Canada", sans-serif;
+    color: #1a180d;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Radio Canada", sans-serif;
+  }
+  input {
+    @apply border rounded font-light py-1 px-3  w-full mb-4;
+  }
 
-   input:focus {
-      @apply border-none;
-   }
-   h1 {
-      @apply text-2xl py-5 font-bold text-foreground;
-      font-family: "Radio Canada", sans-serif;
-   }
-   h2 {
-      @apply text-xl py-4 font-semibold text-foreground;
-      font-family: "Radio Canada", sans-serif;
-   }
-   p {
-      @apply text-gray-500 my-2 text-sm;
-   }
-   .button {
-      @apply block w-36 text-center bg-accent text-sm text-foreground py-2 px-3 rounded mt-2 font-medium hover:scale-105 transition ease-in-out;
-   }
+  input:focus {
+    @apply border-none;
+  }
+  h1 {
+    @apply text-2xl py-5 font-bold text-foreground;
+    font-family: "Radio Canada", sans-serif;
+  }
+  h2 {
+    @apply text-xl py-4 mt-1 font-semibold text-foreground;
+    font-family: "Radio Canada", sans-serif;
+  }
+  p {
+    @apply text-gray-500 my-2 text-sm;
+  }
+  .button {
+    @apply block w-36 text-center bg-accent text-sm text-foreground py-2 px-3 rounded mt-2 font-medium hover:scale-105 transition ease-in-out;
+  }
 }
