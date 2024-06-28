@@ -8,9 +8,10 @@ import Image from "next/image";
 import test from "@/public/test.jpg";
 import Link from "next/link";
 import { getLatestArticles } from "@/lib/prisma";
+import { Article } from "@/types/type";
 
 export default async function Aside() {
-  const latestArticles = await getLatestArticles();
+  const latestArticles: Article[] = await getLatestArticles();
   return (
     <div className="flex-1 p-12 ml-12 max-w-sm">
       <div className="mb-12">
