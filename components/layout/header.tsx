@@ -3,9 +3,10 @@ import logo from "@/public/logo-min.svg";
 import { getCategories } from "@/lib/prisma";
 import { Menu, Search } from "lucide-react";
 import Link from "next/link";
+import { Category } from "@/types/type";
 
 export default async function Header() {
-  const categories = await getCategories();
+  const categories: Category[] = await getCategories();
   return (
     <header className="border border-b fixed w-full bg-background shadow-sm z-50">
       <div className="flex sm:h-32 h-24 max-w-full px-12 m-auto justify-between">
