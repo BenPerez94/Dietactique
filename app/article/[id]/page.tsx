@@ -9,10 +9,6 @@ import linkedin from "@/public/network/linkedin.png";
 import youtube from "@/public/network/youtube.png";
 import Link from "next/link";
 import Aside from "@/components/aside";
-import {
-  Article as PrismaArticle,
-  Category as PrismaCategory,
-} from "@prisma/client";
 
 interface PageParams {
   params: {
@@ -20,23 +16,13 @@ interface PageParams {
   };
 }
 
-interface Article extends PrismaArticle {
-  contents: { text: string }[];
-  category: PrismaCategory;
-}
-
-interface ArticleCategory extends PrismaArticle {
-  contents: { text: string }[];
-  category: PrismaCategory;
-}
-
 export default async function Article({ params }: PageParams) {
   const { id } = params;
-  const article = (await getArticleById(String(id))) as Article;
+  const article = await getArticleById(String(id));
   const category = article?.category.id;
-  const articleCategory = (await getArticlesByCategoryId(
-    String(category)
-  )) as ArticleCategory[];
+  const articleCategory = await getArticlesByCategoryId(String(category));
+
+  console.log(articleCategory);
 
   if (!article) {
     notFound();
@@ -46,7 +32,7 @@ export default async function Article({ params }: PageParams) {
     <div className="flex mt-32 justify-between max-w-7xl m-auto">
       <div className="flex-1 p-6 pt-12 min-w-[830px]">
         <h2 className="text-4xl">{article.title}</h2>
-        <p className="text-lg">{article.contents[0]?.text ?? ""}</p>
+        <p className="text-lg">{article.contents[0].text}</p>
 
         <div className="mt-20">
           <div className="flex justify-center gap-10 m-auto">
@@ -79,10 +65,10 @@ export default async function Article({ params }: PageParams) {
                   />
                   <h2>{articleSame.title}</h2>
                   <p className="min-h-24">
-                    {articleSame.contents[0]?.text.substring(0, 150) ?? ""} ...
+                    {articleSame.contents[0].text.substring(0, 150)} ...
                   </p>
                   <Link
-                    href={`/article/${articleSame.id}`}
+                    href={`${articleSame.id}`}
                     className="button mt-3 ml-auto"
                   >
                     Lire l'article
