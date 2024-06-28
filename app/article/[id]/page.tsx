@@ -9,24 +9,23 @@ import linkedin from "@/public/network/linkedin.png";
 import youtube from "@/public/network/youtube.png";
 import Link from "next/link";
 import Aside from "@/components/aside";
-
+import { Category, Article } from "@/types/type";
 interface PageParams {
   params: {
     id: string;
   };
 }
 
-export default async function Article({ params }: PageParams) {
+export default async function ArticlePage({ params }: PageParams) {
   const { id } = params;
-  const article = await getArticleById(String(id));
-  const category = article?.category.id;
-  const articleCategory = await getArticlesByCategoryId(String(category));
-
-  console.log(articleCategory);
+  const article: Article | null = await getArticleById(String(id));
 
   if (!article) {
     notFound();
   }
+
+  const category = article?.category?.id || "";
+  const articleCategory: Article[] = await getArticlesByCategoryId(category);
 
   return (
     <div className="flex mt-32 justify-between max-w-7xl m-auto">
