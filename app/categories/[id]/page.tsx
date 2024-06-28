@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import test from "@/public/test.jpg";
 import Image from "next/image";
 import Link from "next/link";
+import { Category, Article } from "@/types/type";
 
 interface PageParams {
   params: {
@@ -13,8 +14,8 @@ interface PageParams {
 
 export default async function Categories({ params }: PageParams) {
   const { id } = params;
-  const category = await getCategoryById(id);
-  const articles = await getArticlesByCategoryId(id);
+  const category: Category | null = await getCategoryById(id);
+  const articles: Article[] = await getArticlesByCategoryId(id);
 
   if (articles.length === 0) {
     notFound();
