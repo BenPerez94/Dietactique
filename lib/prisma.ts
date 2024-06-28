@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === "production") {
 
 export default prisma;
 
-export async function getArticleById(id: string) {
+export async function getArticleById(id: string): Promise<Article | null> {
   return prisma.article.findUnique({
     where: { id },
     include: {
@@ -23,27 +23,28 @@ export async function getArticleById(id: string) {
       videos: { orderBy: { order: "asc" } },
       category: true,
     },
-  });
+  }) as Promise<Article | null>;
 }
 
-export async function getCategoryById(id: string) {
+export async function getCategoryById(id: string): Promise<Category | null> {
   return prisma.category.findUnique({
     where: { id },
-  });
+  }) as Promise<Category | null>;
 }
 
-export async function getArticlesByCategoryId(categoryId: string) {
+export async function getArticlesByCategoryId(
+  categoryId: string
+): Promise<Article[]> {
   return prisma.article.findMany({
     where: { categoryId },
     include: {
       contents: true,
       category: true,
     },
-  });
+  }) as Promise<Article[]>;
 }
-
-export async function getCategories() {
-  return prisma.category.findMany();
+export async function getCategories(): Promise<Category[]> {
+  return prisma.category.findMany() as Promise<Category[]>;
 }
 
 export async function getCategoriesWithLastTwoArticles(): Promise<Category[]> {
@@ -74,8 +75,8 @@ export async function getCategoriesWithLastTwoArticles(): Promise<Category[]> {
   })) as Category[];
 }
 
-export async function getLatestArticles() {
-  return await prisma.article.findMany({
+export async function getLatestArticles(): Promise<Article[]> {
+  return prisma.article.findMany({
     orderBy: {
       createdAt: "desc",
     },
@@ -84,5 +85,5 @@ export async function getLatestArticles() {
       contents: true,
       category: true,
     },
-  });
+  }) as Promise<Article[]>;
 }
