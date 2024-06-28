@@ -1,4 +1,5 @@
-import { PrismaClient, Category } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
+import { Category, Article } from "@/types/type";
 
 let prisma: PrismaClient;
 
@@ -60,10 +61,16 @@ export async function getCategoriesWithLastTwoArticles(): Promise<Category[]> {
     },
   });
 
-  // Explicitement typer les catégories retournées
+  // Convert the Prisma output to match the TypeScript types
   return categories.map((category) => ({
     ...category,
-    articles: category.articles || [], // Assurez-vous que articles existe, même s'il est vide
+    articles: category.articles.map((article) => ({
+      ...article,
+      category: {
+        id: category.id,
+        name: category.name,
+      },
+    })),
   })) as Category[];
 }
 
