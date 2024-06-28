@@ -9,9 +9,10 @@ import linkedin from "@/public/network/linkedin.png";
 import youtube from "@/public/network/youtube.png";
 import logo from "@/public/logo.svg";
 import Aside from "@/components/aside";
+import { Category, Article } from "@/types/type";
 
 export default async function Home() {
-  const categories = await getCategoriesWithLastTwoArticles();
+  const categories: Category[] = await getCategoriesWithLastTwoArticles();
   return (
     <div className="mt-32 ">
       {/* HERO */}
@@ -39,7 +40,7 @@ export default async function Home() {
             <div key={category.id}>
               <h1>{category.name}</h1>
               <div className="flex pt-10 my-3 gap-12">
-                {category.articles.map((article) => (
+                {category.articles?.map((article) => (
                   <div
                     key={article.id}
                     className="flex flex-col border p-4  rounded-md w-[400px]  shadow-lg shadow-gray-200/100"

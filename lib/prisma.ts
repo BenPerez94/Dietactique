@@ -1,27 +1,19 @@
-import { PrismaClient, Category, Article, Prisma } from "@prisma/client";
+import { PrismaClient, Category } from "@prisma/client";
 
 let prisma: PrismaClient;
 
 if (process.env.NODE_ENV === "production") {
   prisma = new PrismaClient();
 } else {
-  if (!(global as any).prisma) {
-    (global as any).prisma = new PrismaClient();
+  if (!global.prisma) {
+    global.prisma = new PrismaClient();
   }
-  prisma = (global as any).prisma;
+  prisma = global.prisma;
 }
 
 export default prisma;
 
-export async function getArticleById(id: string): Promise<
-  | (Article & {
-      contents: { text: string; order: number }[];
-      images: { url: string; order: number }[];
-      videos: { url: string; order: number }[];
-      category: Category;
-    })
-  | null
-> {
+export async function getArticleById(id: string) {
   return prisma.article.findUnique({
     where: { id },
     include: {
@@ -33,18 +25,13 @@ export async function getArticleById(id: string): Promise<
   });
 }
 
-export async function getCategoryById(id: string): Promise<Category | null> {
+export async function getCategoryById(id: string) {
   return prisma.category.findUnique({
     where: { id },
   });
 }
 
-export async function getArticlesByCategoryId(categoryId: string): Promise<
-  (Article & {
-    contents: { text: string }[];
-    category: Category;
-  })[]
-> {
+export async function getArticlesByCategoryId(categoryId: string) {
   return prisma.article.findMany({
     where: { categoryId },
     include: {
@@ -54,17 +41,11 @@ export async function getArticlesByCategoryId(categoryId: string): Promise<
   });
 }
 
-export async function getCategories(): Promise<Category[]> {
+export async function getCategories() {
   return prisma.category.findMany();
 }
 
-export async function getCategoriesWithLastTwoArticles(): Promise<
-  (Category & {
-    articles: (Article & {
-      contents: { text: string }[];
-    })[];
-  })[]
-> {
+export async function getCategoriesWithLastTwoArticles(): Promise<Category[]> {
   const categories = await prisma.category.findMany({
     include: {
       articles: {
@@ -79,16 +60,15 @@ export async function getCategoriesWithLastTwoArticles(): Promise<
     },
   });
 
-  return categories;
+  // Explicitement typer les catégories retournées
+  return categories.map((category) => ({
+    ...category,
+    articles: category.articles || [], // Assurez-vous que articles existe, même s'il est vide
+  })) as Category[];
 }
 
-export async function getLatestArticles(): Promise<
-  (Article & {
-    contents: { text: string }[];
-    category: Category;
-  })[]
-> {
-  return prisma.article.findMany({
+export async function getLatestArticles() {
+  return await prisma.article.findMany({
     orderBy: {
       createdAt: "desc",
     },
