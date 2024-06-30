@@ -1,5 +1,4 @@
 import { PrismaClient } from "@prisma/client";
-import { Category, Article } from "@/types/type";
 
 let prisma: PrismaClient;
 
@@ -14,7 +13,7 @@ if (process.env.NODE_ENV === "production") {
 
 export default prisma;
 
-export async function getArticleById(id: string): Promise<Article | null> {
+export async function getArticleById(id: string) {
   return prisma.article.findUnique({
     where: { id },
     include: {
@@ -23,31 +22,30 @@ export async function getArticleById(id: string): Promise<Article | null> {
       videos: { orderBy: { order: "asc" } },
       category: true,
     },
-  }) as Promise<Article | null>;
+  });
 }
 
-export async function getCategoryById(id: string): Promise<Category | null> {
+export async function getCategoryById(id: string) {
   return prisma.category.findUnique({
     where: { id },
-  }) as Promise<Category | null>;
+  });
 }
 
-export async function getArticlesByCategoryId(
-  categoryId: string
-): Promise<Article[]> {
+export async function getArticlesByCategoryId(categoryId: string) {
   return prisma.article.findMany({
     where: { categoryId },
     include: {
       contents: true,
       category: true,
     },
-  }) as Promise<Article[]>;
-}
-export async function getCategories(): Promise<Category[]> {
-  return prisma.category.findMany() as Promise<Category[]>;
+  });
 }
 
-export async function getCategoriesWithLastTwoArticles(): Promise<Category[]> {
+export async function getCategories() {
+  return prisma.category.findMany();
+}
+
+export async function getCategoriesWithLastTwoArticles() {
   const categories = await prisma.category.findMany({
     include: {
       articles: {
@@ -72,10 +70,10 @@ export async function getCategoriesWithLastTwoArticles(): Promise<Category[]> {
         name: category.name,
       },
     })),
-  })) as Category[];
+  }));
 }
 
-export async function getLatestArticles(): Promise<Article[]> {
+export async function getLatestArticles() {
   return prisma.article.findMany({
     orderBy: {
       createdAt: "desc",
@@ -85,5 +83,5 @@ export async function getLatestArticles(): Promise<Article[]> {
       contents: true,
       category: true,
     },
-  }) as Promise<Article[]>;
+  });
 }
