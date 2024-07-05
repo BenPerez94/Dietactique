@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="fr">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased flex flex-col justify-between",
+          "min-h-screen min-w-screen bg-background font-sans antialiased flex flex-col justify-between",
           fontSans.variable
         )}
       >

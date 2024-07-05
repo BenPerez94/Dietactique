@@ -13,23 +13,24 @@ import { Article } from "@/types/type";
 export default async function Aside() {
   const latestArticles: Article[] = await getLatestArticles();
   return (
-    <div className="flex-1 p-12 ml-12 max-w-sm">
+    <div className="lg:p-12 p-4 lg:ml-12 w-full max-w-full lg:max-w-sm">
       <div className="mb-12">
         <h2>Qui suis-je ?</h2>
-        <p>
-          Je m'appelle Christophe, j'ai 28 ans et je suis coach sportif diplômé.
-          Depuis plus de deux décennies, le sport fait partie intégrante de ma
-          vie.
+        <p className="text-sm">
+          Je suis Christophe, coach sportif diplômé de 28 ans spécialisé en
+          perte de poids. Rejoignez-moi pour des conseils et astuces afin
+          d'adopter une alimentation saine et savoureuse pour une perte de poids
+          efficace et durable.
         </p>
-        <Link href="" className="button mt-6">
+        <Link href="/about" className="button mt-6">
           En savoir plus
         </Link>
       </div>
-      <div className="mb-12">
+      <div className="mb-12 max-w-sm">
         <h2>NewsLetter</h2>
         <form action="" className="mt-3">
-          <input type="text" placeholder="Nom Prénom" />
-          <input type="text" placeholder="Email" />
+          <input type="text" placeholder="Nom Prénom" className="mb-3" />
+          <input type="text" placeholder="Email" className="mb-3" />
           <input
             type="submit"
             className="button cursor-pointer w-60"
@@ -70,8 +71,8 @@ export default async function Aside() {
                 />
                 <div className="flex-1 relative">
                   <h3 className="text-sm">{latestArticle.title}</h3>
-                  <p className="text-[11px] leading-3 my-1">
-                    {latestArticle.contents[0].text.substring(0, 100)}...
+                  <p className="text-[11px] leading-4 my-1">
+                    {latestArticle.contents[0].text.substring(0, 50)}...
                   </p>
                   <Link
                     href={`/article/${latestArticle.id}`}

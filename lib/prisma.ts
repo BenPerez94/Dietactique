@@ -40,6 +40,13 @@ export async function getArticlesByCategoryId(categoryId: string) {
     },
   });
 }
+export async function getArticles() {
+  return prisma.article.findMany({
+    include: {
+      category: true,
+    },
+  });
+}
 
 export async function getCategories() {
   return prisma.category.findMany();
@@ -60,7 +67,6 @@ export async function getCategoriesWithLastTwoArticles() {
     },
   });
 
-  // Convert the Prisma output to match the TypeScript types
   return categories.map((category) => ({
     ...category,
     articles: category.articles.map((article) => ({

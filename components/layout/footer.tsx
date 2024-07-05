@@ -28,14 +28,14 @@ export default function Footer() {
             <Image src={youtube} alt="" width={40} height={40} />
           </a>
         </div>
-        <div className="flex m-auto gap-20 w-full  pt-12 justify-center">
+        <div className="flex flex-col lg:flex-row m-auto lg:gap-20  gap-3 w-full  pt-12 justify-center">
           <Link href="" className="text-background text-center">
             Qui sui-je ?
           </Link>
           <Link href="" className="text-background  text-center">
             Mention Légales
           </Link>
-          <Link href="" className="text-background text-center">
+          <Link href="/contact" className="text-background text-center">
             Contact
           </Link>
         </div>

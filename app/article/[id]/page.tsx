@@ -28,8 +28,8 @@ export default async function ArticlePage({ params }: PageParams) {
   const articleCategory: Article[] = await getArticlesByCategoryId(category);
 
   return (
-    <div className="flex mt-32 justify-between max-w-7xl m-auto">
-      <div className="flex-1 p-6 pt-12 min-w-[830px]">
+    <div className="flex lg:flex-row flex-col mt-32 justify-between max-w-7xl m-auto">
+      <div className="lg:flex-1 p-6 lg:pt-12">
         <h2 className="text-4xl">{article.title}</h2>
         <p className="text-lg">{article.contents[0].text}</p>
 
@@ -51,11 +51,11 @@ export default async function ArticlePage({ params }: PageParams) {
 
           <div className="mt-12">
             <h3 className="text-xl">Autres articles de la catégorie</h3>
-            <div className="flex gap-6">
+            <div className="flex flex-col lg:flex-row gap-6">
               {articleCategory.map((articleSame) => (
                 <div
                   key={articleSame.id}
-                  className="flex flex-col border p-4 mt-16 rounded-md w-[250px]  shadow-lg shadow-gray-200/100"
+                  className="flex flex-col border p-4 mt-16 rounded-md lg:w-[250px]  shadow-lg shadow-gray-200/100"
                 >
                   <Image
                     src={test}

@@ -18,7 +18,7 @@
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 54 69% 85%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 51 34% 9%;
@@ -79,12 +79,9 @@
     font-family: "Radio Canada", sans-serif;
   }
   input {
-    @apply border rounded font-light py-1 px-3  w-full mb-4;
+    @apply border rounded font-light py-1 px-3  w-full;
   }
 
-  input:focus {
-    @apply border-none;
-  }
   h1 {
     @apply text-2xl py-5 font-bold text-foreground;
     font-family: "Radio Canada", sans-serif;
@@ -94,9 +91,22 @@
     font-family: "Radio Canada", sans-serif;
   }
   p {
-    @apply text-gray-500 my-2 text-sm;
+    @apply text-gray-500 my-2 text-lg font-light;
   }
   .button {
     @apply block w-36 text-center bg-accent text-sm text-foreground py-2 px-3 rounded mt-2 font-medium hover:scale-105 transition ease-in-out;
+  }
+
+  table {
+    @apply my-6 border w-full rounded;
+  }
+
+  thead {
+    @apply bg-gray-700 text-background;
+  }
+
+  th,
+  td {
+    @apply p-3 text-center;
   }
 }
