@@ -4,9 +4,15 @@ export default function About() {
     <div className="mt-32 max-w-7xl m-auto p-12 text-lg">
       <h1>Qui suis-je ?</h1>
       <p>
-        Bienvenue sur mon blog ! Je suis ravi de vous accueillir ici pour
-        partager avec vous mon parcours et mes conseils pour une vie plus saine
-        et épanouie.
+        Bienvenue sur mon blog dédié à la perte de poids ! Ici, vous trouverez
+        une multitude de conseils pour atteindre vos objectifs de manière saine
+        et durable. Je partagerai des astuces pratiques sur la nutrition et
+        l'alimentation, des idées pour intégrer une activité physique adaptée à
+        votre quotidien, ainsi que des recommandations pour améliorer votre
+        bien-être et votre santé. Mon objectif est de vous fournir des
+        informations fiables et motivantes pour vous accompagner tout au long de
+        votre parcours. Explorez les articles et découvrez comment transformer
+        votre mode de vie pour une perte de poids réussie et épanouissante.
       </p>
       <h2>À propos de moi :</h2>
       <p>
@@ -34,18 +40,10 @@ export default function About() {
       <p>
         Vous vous demandez peut-être pourquoi j'ai décidé de créer ce blog. La
         réponse est simple : je veux partager mon expérience et mes
-        connaissances pour aider un maximum de personnes à mieux manger. Et
-        attention, mieux manger ne veut pas dire se priver ! Mon objectif est de
-        vous montrer qu'il est tout à fait possible de manger sainement tout en
-        se faisant plaisir.
-      </p>
-      <h2>Ce que vous trouverez ici :</h2>
-      <p>
-        Sur ce blog, je partagerai des conseils pratiques, des recettes
-        délicieuses et équilibrées, ainsi que des astuces pour intégrer une
-        alimentation saine dans votre quotidien sans sacrifier le plaisir. Vous
-        découvrirez aussi des témoignages inspirants et des histoires de
-        personnes que j'ai eu la chance d'accompagner.
+        connaissances pour aider un maximum de personnes à retrouver leur santé
+        et mieux manger. Et attention, mieux manger ne veut pas dire se priver !
+        Mon objectif est de vous montrer qu'il est tout à fait possible de
+        manger sainement tout en se faisant plaisir.
       </p>
       <p>
         Je suis impatient de commencer cette aventure avec vous et de vous aider
@@ -53,6 +51,7 @@ export default function About() {
         contacter pour toute question ou simplement pour échanger. Ensemble,
         faisons de votre alimentation une source de plaisir et de vitalité !
       </p>
+
       <p>À bientôt sur le blog</p>
     </div>
   );

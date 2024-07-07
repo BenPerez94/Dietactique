@@ -1,9 +1,9 @@
 import logo from "@/public/logo.svg";
 import Image from "next/image";
-import insta from "@/public/network/insta.png";
-import facebook from "@/public/network/facebook.png";
-import linkedin from "@/public/network/linkedin.png";
-import youtube from "@/public/network/youtube.png";
+import insta from "@/public/network/insta-black.png";
+import facebook from "@/public/network/facebook-black.png";
+import linkedin from "@/public/network/linkedin-black.png";
+import youtube from "@/public/network/youtube-black.png";
 import Link from "next/link";
 import { Instagram, Youtube } from "lucide-react";
 
@@ -12,7 +12,7 @@ export default function Footer() {
     <div className=" bg-foreground flex flex-col">
       <div className="max-w-7xl m-auto flex flex-col justify-center py-6">
         <div className="m-auto mb-6">
-          <Image src={logo} alt="logo du site" className="w-[850px]" />
+          <Image src={logo} alt="logo du site" className="w-[550px]" />
         </div>
         <div className="flex gap-10 m-auto">
           <a href="">
@@ -29,7 +29,7 @@ export default function Footer() {
           </a>
         </div>
         <div className="flex flex-col lg:flex-row m-auto lg:gap-20  gap-3 w-full  pt-12 justify-center">
-          <Link href="" className="text-background text-center">
+          <Link href="/about" className="text-background text-center">
             Qui sui-je ?
           </Link>
           <Link href="" className="text-background  text-center">

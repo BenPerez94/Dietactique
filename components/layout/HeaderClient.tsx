@@ -53,7 +53,7 @@ function HeaderClient({ categories }: { categories: Category[] }) {
               priority={true}
               className={`h-auto  w-40 ${
                 isScrolled ? "lg:w-42" : "lg:w-72"
-              } pt-6 lg:pt-0 mr-12`}
+              } pt-6 lg:pt-0 mr-12 transition-all duration-300`}
             />
           </Link>
         </div>
@@ -63,12 +63,15 @@ function HeaderClient({ categories }: { categories: Category[] }) {
               isScrolled ? "py-4" : "py-11"
             }`}
           >
-            <ul className="flex font-bold">
+            <ul className="flex font-bold transition-all duration-300 ">
               {categories.map((category) => (
-                <li key={category.id} className="p-1 mr-12">
+                <li
+                  key={category.id}
+                  className="p-1 mr-12 hover:scale-110 transition-all duration-300"
+                >
                   <Link
                     href={`/categories/${category.id}`}
-                    className="p-3 rounded border border-background text-lg hover:text-accent"
+                    className="p-3 rounded border border-background text-lg     transition-all duration-300  "
                   >
                     {category.name}
                   </Link>

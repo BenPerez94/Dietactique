@@ -23,11 +23,12 @@ export default async function Home() {
           <Image
             src={logo}
             alt="logo du site"
-            className="m-auto w-[750px] pt-24 pb-6"
+            className="m-auto w-[700px] pt-24 px-6 pb-6"
           />
-          <p className="m-auto text-background text-xl p-3 max-w-3xl text-center">
-            Mon objectif : Vous accompagner vers la réussite de votre perte de
-            poids grâce à une alimentation saine, équilibrée et gourmande !
+          <p className="m-auto text-background text-xl p-3 px-8 max-w-3xl text-center">
+            Mon objectif : Vous guider vers le succès de votre perte de poids en
+            vous fournissant des conseils pour une alimentation plus saine et
+            une meilleure hygiène de vie.
           </p>
         </div>
       </div>
@@ -42,15 +43,15 @@ export default async function Home() {
               <div className="flex flex-col sm:flex-row maw-w-full pt-10 my-3 gap-12">
                 {category.articles?.map((article) => (
                   <Link href={`/article/${article.id}`} key={article.id}>
-                    <div className="flex flex-col border p-4  rounded-md lg:w-[400px]  shadow-lg shadow-gray-200/100 hover:shadow-sm hover:shadow-accent">
+                    <div className="flex flex-col border p-4  rounded-md lg:w-[400px]  shadow-lg shadow-gray-200/100 hover:scale-105 hover:shadow-accent transition-all duration-300">
                       <Image
                         src={test}
                         alt=""
                         className="h-64 w-full object-cover rounded-md mt-[-55px] bordered  shadow-md shadow-gray-300/100"
                       />
                       <h2>{article.title}</h2>
-                      <p className="min-h-24">
-                        {article.contents?.[0]?.text?.substring(0, 250) ?? ""}
+                      <p className="min-h-36">
+                        {article.contents?.[0]?.text?.substring(0, 200) ?? ""}
                         ...
                       </p>
                     </div>

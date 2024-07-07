@@ -25,12 +25,10 @@ export default async function Categories({ params }: PageParams) {
     <div className="mt-32 ">
       {/* HERO */}
 
-      <div className="flex flex-col py-16  bg-hero-pattern bg-cover bg-center relative">
+      <div className="flex flex-col py-20  bg-cat-pattern bg-cover bg-center relative">
         <div className="absolute inset-0 bg-foreground opacity-90 z-10"></div>
         <div className="z-20 m-auto">
           <h1 className="text-background text-center text-4xl">
-            <span className="text-accent text-lg font-light">Catégorie</span>
-            <br />
             {category?.name}
           </h1>
         </div>

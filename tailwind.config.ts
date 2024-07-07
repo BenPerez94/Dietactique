@@ -78,6 +78,7 @@ const config = {
       },
       backgroundImage: {
         "hero-pattern": "url('/background.jpg')",
+        "cat-pattern": "url('/category/alimentation.jpg')",
       },
     },
   },

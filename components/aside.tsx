@@ -13,14 +13,13 @@ import { Article } from "@/types/type";
 export default async function Aside() {
   const latestArticles: Article[] = await getLatestArticles();
   return (
-    <div className="lg:p-12 p-4 lg:ml-12 w-full max-w-full lg:max-w-sm">
+    <div className="lg:p-12 p-4  max-w-full lg:max-w-sm">
       <div className="mb-12">
         <h2>Qui suis-je ?</h2>
         <p className="text-sm">
-          Je suis Christophe, coach sportif diplômé de 28 ans spécialisé en
-          perte de poids. Rejoignez-moi pour des conseils et astuces afin
-          d'adopter une alimentation saine et savoureuse pour une perte de poids
-          efficace et durable.
+          Je m'appelle Christophe, coach sportif diplômé de 28 ans, expert en
+          perte de poids. Rejoignez-moi pour obtenir des conseils et astuces
+          afin de perdre du poids de manière rapide et durable !
         </p>
         <Link href="/about" className="button mt-6">
           En savoir plus
