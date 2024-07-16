@@ -35,7 +35,7 @@ export default async function ArticlePage({ params }: PageParams) {
         className="h-96 w-full mt-32 object-cover"
       />
       <div className="flex lg:flex-row flex-col container ">
-        <div className="lg:flex-1 p-6 lg:pt-12">
+        <div className="lg:flex-1 p-6 lg:pt-12 mb-16">
           <h2 className="text-4xl mt-[-140px] bg-background text-center p-6 pt-12 px-12 mb-8 shadow-lg border rounded-lg ">
             {article.title}
             <span className="block text-foreground pt-2 text-lg font-light drop-shadow-sm">
@@ -319,26 +319,19 @@ export default async function ArticlePage({ params }: PageParams) {
             <h3 className="text-xl">Autres articles de la catégorie</h3>
             <div className="flex flex-col lg:flex-row gap-6">
               {articleCategory.slice(0, 3).map((articleSame) => (
-                <div
-                  key={articleSame.id}
-                  className="flex flex-col border p-4 mt-16 rounded-md lg:w-[250px]  shadow-lg shadow-gray-200/100"
-                >
-                  <Image
-                    src={test}
-                    alt=""
-                    className="h-40 w-full object-cover rounded-md mt-[-55px] bordered  shadow-md shadow-gray-300/100"
-                  />
-                  <h2>{articleSame.title}</h2>
-                  <p className="min-h-24">
-                    {articleSame.contents[0].text.substring(0, 150)} ...
-                  </p>
-                  <Link
-                    href={`${articleSame.id}`}
-                    className="button mt-3 ml-auto"
-                  >
-                    Lire l'article
-                  </Link>
-                </div>
+                <Link href={`${articleSame.id}`} key={articleSame.id}>
+                  <div className="flex flex-col border p-4 mt-16 rounded-md lg:w-[250px]  shadow-lg shadow-gray-200/100 hover:border-accent hover:scale-105 transition-all duration-300">
+                    <Image
+                      src={test}
+                      alt=""
+                      className="h-40 w-full object-cover rounded-md mt-[-55px] bordered  shadow-md shadow-gray-300/100"
+                    />
+                    <h2>{articleSame.title}</h2>
+                    <p className="min-h-24">
+                      {articleSame.contents[0].text.substring(0, 90)} ...
+                    </p>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
