@@ -87,16 +87,53 @@
     font-family: "Radio Canada", sans-serif;
   }
   h2 {
-    @apply text-xl pt-4 mt-1 font-semibold text-foreground;
+    @apply text-xl my-6 mt-1 font-semibold text-foreground;
     font-family: "Radio Canada", sans-serif;
   }
+  h3 {
+    @apply mb-6 text-lg;
+  }
+
+  h3.articleH3 {
+    @apply border-l-2 border-accent pl-3;
+  }
   p {
-    @apply text-gray-500 my-2 text-lg font-light;
+    @apply text-gray-600 mb-6 text-base font-light;
   }
   .button {
     @apply block w-36 text-center bg-accent text-sm text-foreground py-2 px-3 rounded mt-2 font-medium hover:scale-105 transition-all duration-300 ease-in-out;
   }
 
+  ul.articleList {
+    @apply list-disc px-6 my-3 font-light;
+    list-style: none;
+  }
+
+  ul.articleList li {
+    @apply text-gray-600;
+    position: relative;
+    padding-left: 40px;
+  }
+
+  ul.articleList li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url("/bullet.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  ol {
+    @apply list-decimal pl-12 py-3;
+  }
+  li {
+    @apply py-2;
+  }
   table {
     @apply my-6 border w-full rounded;
   }

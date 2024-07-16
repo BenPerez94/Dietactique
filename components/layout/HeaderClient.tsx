@@ -63,7 +63,7 @@ function HeaderClient({ categories }: { categories: Category[] }) {
               isScrolled ? "py-4" : "py-11"
             }`}
           >
-            <ul className="flex font-bold transition-all duration-300 ">
+            <ul className="flex font-bold transition-all duration-300 list-none py-0 ">
               {categories.map((category) => (
                 <li
                   key={category.id}

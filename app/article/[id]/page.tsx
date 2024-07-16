@@ -36,13 +36,13 @@ export default async function ArticlePage({ params }: PageParams) {
       />
       <div className="flex lg:flex-row flex-col container ">
         <div className="lg:flex-1 p-6 lg:pt-12">
-          <h2 className="text-4xl mt-[-140px] bg-background text-center p-6 pt-12 px-12 mb-6 shadow-lg border rounded-lg ">
+          <h2 className="text-4xl mt-[-140px] bg-background text-center p-6 pt-12 px-12 mb-8 shadow-lg border rounded-lg ">
             {article.title}
-            <span className="block text-accent pt-2 text-lg">
+            <span className="block text-foreground pt-2 text-lg font-light drop-shadow-sm">
               {article.category.name}
             </span>
           </h2>
-          <div className="px-6">
+          <div className="px-6 ">
             <p>
               Perdre du poids est un objectif que de nombreuses femmes
               recherchent. Que ce soit pour améliorer sa santé, être plus
@@ -53,8 +53,13 @@ export default async function ArticlePage({ params }: PageParams) {
               vie... différentes stratégies doivent être combinées pour vous
               aider à atteindre une transformation rapide et efficace !
             </p>
-            <h2>Comprendre la balance énergétique : le déficit calorique</h2>
-            <h3>Qu'est-ce que la balance énergétique ?</h3>
+
+            <h2 className="articleH2">
+              Comprendre la balance énergétique : le déficit calorique
+            </h2>
+            <h3 className="articleH3">
+              Qu'est-ce que la balance énergétique ?
+            </h3>
             <p>
               La balance énergétique est le rapport entre les calories
               consommées par l'alimentation et les calories dépensées par
@@ -62,13 +67,13 @@ export default async function ArticlePage({ params }: PageParams) {
               déficit calorique, c'est-à-dire consommer moins de calories que ce
               que le corps dépense.
             </p>
-            <h3>Comment créer un déficit calorique ?</h3>
+            <h3 className="articleH3">Comment créer un déficit calorique ?</h3>
             <p>
               Créer un déficit calorique peut être réalisé en combinant une
               alimentation saine et une activité physique régulière. Voici
               quelques conseils :
             </p>
-            <ul>
+            <ul className="articleList">
               <li>
                 Choisir des aliments faibles en calories mais riches en
                 nutriments : Privilégiez les légumes, les fruits, et les
@@ -90,6 +95,11 @@ export default async function ArticlePage({ params }: PageParams) {
               permet d'ajuster votre alimentation et votre niveau d'activité
               pour rester en déficit calorique. (affiliation MYfitnesspal)
             </p>
+            <Image
+              src={test}
+              alt=""
+              className="h-96 object-cover my-12 border rounded"
+            />
             <h2>L'importance d'une alimentation équilibrée</h2>
             <p>
               Eh oui, pas de remède miracle ! Le plus important se trouve dans
@@ -100,7 +110,7 @@ export default async function ArticlePage({ params }: PageParams) {
               ce que nous avons vu précédemment, voici quelques principes à
               suivre :
             </p>
-            <ul>
+            <ul className="articleList">
               <li>
                 Consommez des protéines maigres : Les protéines aident à la
                 construction musculaire et à la satiété. Privilégiez les sources
@@ -141,7 +151,7 @@ export default async function ArticlePage({ params }: PageParams) {
               d'améliorer la santé cardiovasculaire. Voici quelques activités
               recommandées :
             </p>
-            <ul>
+            <ul className="articleList">
               <li>
                 La marche rapide : Facile à intégrer dans votre quotidien, elle
                 aide à brûler les graisses sans être trop intense.
@@ -170,7 +180,7 @@ export default async function ArticlePage({ params }: PageParams) {
               développant vos muscles, vous brûlez plus de calories même au
               repos. Quelques exercices recommandés :
             </p>
-            <ul>
+            <ul className="articleList">
               <li>
                 Les squats : Ils renforcent les cuisses, les fessiers et
                 engagent vos abdominaux.
@@ -218,7 +228,9 @@ export default async function ArticlePage({ params }: PageParams) {
                 activités modérées et augmentez progressivement l'intensité.
               </li>
             </ol>
-            <h3>Puis-je perdre du poids sans faire de sport ?</h3>
+            <h3 className="articleH3">
+              Puis-je perdre du poids sans faire de sport ?
+            </h3>
             <p>
               Oui ! Il est possible de perdre du poids sans faire de sport,
               principalement en ajustant votre alimentation. Cependant,
@@ -227,8 +239,10 @@ export default async function ArticlePage({ params }: PageParams) {
               cardiovasculaire, et une meilleure humeur grâce à la libération
               d'endorphines.
             </p>
-            <h3>Quels sont les pièges à éviter lors d'un régime ?</h3>
-            <ul>
+            <h3 className="articleH3">
+              Quels sont les pièges à éviter lors d'un régime ?
+            </h3>
+            <ul className="articleList">
               <li>
                 Les régimes restrictifs : Ils peuvent entraîner des carences et
                 un effet yo-yo.
@@ -243,14 +257,18 @@ export default async function ArticlePage({ params }: PageParams) {
                 nutriments.
               </li>
             </ul>
-            <h3>Combien de temps faut-il pour voir des résultats ?</h3>
+            <h3 className="articleH3">
+              Combien de temps faut-il pour voir des résultats ?
+            </h3>
             <p>
               Les résultats peuvent varier d'une personne à l'autre, mais en
               général, vous pouvez commencer à voir des changements visibles en
               4 à 6 semaines avec une alimentation équilibrée et un programme
               d'exercice régulier.
             </p>
-            <h3>Les compléments alimentaires sont-ils efficaces ?</h3>
+            <h3 className="articleH3">
+              Les compléments alimentaires sont-ils efficaces ?
+            </h3>
             <p>
               Certains compléments peuvent aider, mais ils ne doivent pas
               remplacer une alimentation équilibrée et de l'exercice. Consultez

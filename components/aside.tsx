@@ -38,7 +38,7 @@ export default async function Aside() {
         </form>
       </div>
       <div className="mb-12">
-        <h2>Suivez moi sur les réseaux</h2>
+        <h2 className="mb-6">Suivez moi sur les réseaux</h2>
         <div className="flex gap-4 m-auto">
           <a href="">
             <Image src={insta} alt="" width={40} height={40} />
@@ -58,30 +58,23 @@ export default async function Aside() {
         <h2>Derniers articles</h2>
         <div className="flex flex-col w-full gap-2">
           {latestArticles.map((latestArticle) => (
-            <div
-              key={latestArticle.id}
-              className="flex flex-col gap-3 w-full border p-2 rounded"
-            >
-              <div className="flex gap-3 w-full ">
-                <Image
-                  src={test}
-                  alt=""
-                  className="w-28 h-28 object-cover flex-none rounded"
-                />
-                <div className="flex-1 relative">
-                  <h3 className="text-sm">{latestArticle.title}</h3>
-                  <p className="text-[11px] leading-4 my-1">
-                    {latestArticle.contents[0].text.substring(0, 50)}...
-                  </p>
-                  <Link
-                    href={`/article/${latestArticle.id}`}
-                    className="button text-xs w-24 absolute right-0 bottom-0 py-1 "
-                  >
-                    Lire l'article
-                  </Link>
+            <Link key={latestArticle.id} href={`/article/${latestArticle.id}`}>
+              <div className="flex flex-col gap-3 w-full border p-2 rounded hover:scale-105 hover:shadow-accent hover:border-accent transition-all duration-300">
+                <div className="flex gap-3 w-full ">
+                  <Image
+                    src={test}
+                    alt=""
+                    className="w-28 h-28 object-cover flex-none rounded"
+                  />
+                  <div className="flex-1 relative">
+                    <h3 className="text-sm py-1 mb-1">{latestArticle.title}</h3>
+                    <p className="text-[11px] leading-4 my-1">
+                      {latestArticle.contents[0].text.substring(0, 90)}...
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

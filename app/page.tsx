@@ -43,14 +43,14 @@ export default async function Home() {
               <div className="flex flex-col sm:flex-row maw-w-full pt-10 my-3 gap-12">
                 {category.articles?.map((article) => (
                   <Link href={`/article/${article.id}`} key={article.id}>
-                    <div className="flex flex-col border p-4  rounded-md lg:w-[400px]  shadow-lg shadow-gray-200/100 hover:scale-105 hover:shadow-accent transition-all duration-300">
+                    <div className="flex flex-col border p-4  rounded-md lg:w-[400px]  shadow-lg shadow-gray-200/100 hover:border-accent hover:scale-105 transition-all duration-300">
                       <Image
                         src={test}
                         alt=""
                         className="h-64 w-full object-cover rounded-md mt-[-55px] bordered  shadow-md shadow-gray-300/100"
                       />
-                      <h2>{article.title}</h2>
-                      <p className="min-h-36">
+                      <h2 className="mt-6">{article.title}</h2>
+                      <p className="min-h-24 mb-3">
                         {article.contents?.[0]?.text?.substring(0, 200) ?? ""}
                         ...
                       </p>
