@@ -50,7 +50,7 @@ const SearchBar = () => {
         <input
           type="search"
           placeholder="Rechercher..."
-          className="pl-8 w-96"
+          className="pl-8 w-80"
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
         />
@@ -62,11 +62,11 @@ const SearchBar = () => {
       )}
       {results.length > 0 && (
         <div className="absolute bg-white shadow-md mt-0 w-full z-50">
-          <ul>
+          <ul className=" search-li">
             {results.map((article: any) => (
               <li
                 key={article.id}
-                className="p-3 border-b hover:bg-accent transition-all duration-300"
+                className="p-3 border-b hover:bg-accent transition-all duration-300 "
               >
                 <Link
                   href={`/article/${article.id}`}
@@ -74,9 +74,6 @@ const SearchBar = () => {
                   className="text-blue-500"
                 >
                   <div className="font-bold">{article.title}</div>
-                  <div className="text-sm text-gray-600">
-                    {article.snippet}...
-                  </div>
                 </Link>
               </li>
             ))}

@@ -20,32 +20,23 @@ export async function GET(req: NextRequest) {
         AND: keywords.map((kw) => ({
           OR: [
             { title: { contains: kw, mode: "insensitive" } },
-            {
-              contents: {
-                some: { text: { contains: kw, mode: "insensitive" } },
-              },
-            },
+            { content: { contains: kw, mode: "insensitive" } },
           ],
         })),
       },
       include: {
-        contents: {
-          select: {
-            text: true,
-          },
-        },
+        category: true, // Inclure la catégorie si nécessaire
       },
     });
 
+    if (articles.length === 0) {
+      return NextResponse.json({ message: "Aucun résultat" });
+    }
+
     const results = articles.map((article) => ({
       ...article,
-      snippet: article.contents
-        .map((content) => content.text)
-        .join(" ")
-        .slice(0, 200), // Adjust the slice to get the desired length
+      snippet: article.content.slice(0, 200), // Adjust the slice to get the desired length
     }));
-
-    console.log("Found articles:", results); // Vérifiez les résultats
 
     return NextResponse.json(results);
   } catch (error) {

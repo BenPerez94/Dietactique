@@ -13,33 +13,33 @@ import { Article } from "@/types/type";
 export default async function Aside() {
   const latestArticles: Article[] = await getLatestArticles();
   return (
-    <div className="lg:p-12 p-4  max-w-full lg:max-w-sm">
-      <div className="mb-12">
+    <div className="flex xl:flex-col lg:flex-wrap flex-col lg:p-12 p-4  max-w-full xl:max-w-sm lg:w-full">
+      <div className="mb-12 text-center xl:text-left m-auto xl:mx-0 xl:my-0">
         <h2>Qui suis-je ?</h2>
         <p className="text-sm">
           Je m'appelle Christophe, coach sportif diplômé de 28 ans, expert en
           perte de poids. Rejoignez-moi pour obtenir des conseils et astuces
           afin de perdre du poids de manière rapide et durable !
         </p>
-        <Link href="/about" className="button mt-6">
+        <Link href="/about" className="button mt-6 m-auto xl:mx-0">
           En savoir plus
         </Link>
       </div>
-      <div className="mb-12 max-w-sm">
+      <div className="mb-12 max-w-sm  text-center xl:text-left m-auto xl:mx-0 xl:my-12">
         <h2>NewsLetter</h2>
         <form action="" className="mt-3">
           <input type="text" placeholder="Nom Prénom" className="mb-3" />
           <input type="text" placeholder="Email" className="mb-3" />
           <input
             type="submit"
-            className="button cursor-pointer w-60"
+            className="button cursor-pointer w-60  m-auto xl:mx-0"
             value="S'inscrire à la newsletter"
           />
         </form>
       </div>
-      <div className="mb-12">
+      <div className="mb-12   text-center xl:text-left ">
         <h2 className="mb-6">Suivez moi sur les réseaux</h2>
-        <div className="flex gap-4 m-auto">
+        <div className="flex justify-center gap-4 m-auto ">
           <a href="">
             <Image src={insta} alt="" width={40} height={40} />
           </a>
@@ -56,7 +56,7 @@ export default async function Aside() {
       </div>
       <div className="mb-12">
         <h2>Derniers articles</h2>
-        <div className="flex flex-col w-full gap-2">
+        <div className="flex xl:flex-col sm:flex-row flex-col justify-between w-full gap-2">
           {latestArticles.map((latestArticle) => (
             <Link key={latestArticle.id} href={`/article/${latestArticle.id}`}>
               <div className="flex flex-col gap-3 w-full border p-2 rounded hover:scale-105 hover:shadow-accent hover:border-accent transition-all duration-300">
@@ -67,10 +67,10 @@ export default async function Aside() {
                     className="w-28 h-28 object-cover flex-none rounded"
                   />
                   <div className="flex-1 relative">
-                    <h3 className="text-sm py-1 mb-1">{latestArticle.title}</h3>
-                    <p className="text-[11px] leading-4 my-1">
-                      {latestArticle.contents[0].text.substring(0, 90)}...
-                    </p>
+                    <h3 className="text-sm py-1 mb-1 border-none pl-0">
+                      {latestArticle.title}
+                    </h3>
+                    <p className="text-[11px] leading-4 my-1"></p>
                   </div>
                 </div>
               </div>

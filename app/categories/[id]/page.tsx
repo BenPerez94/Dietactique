@@ -46,9 +46,6 @@ export default async function Categories({ params }: PageParams) {
                 className="h-64 w-full object-cover rounded-md mt-[-55px] bordered  shadow-md shadow-gray-300/100"
               />
               <h2 className="mt-6">{article.title}</h2>
-              <p className="mt-0 min-h-24">
-                {article.contents[0]?.text.substring(0, 200)}...
-              </p>
             </div>
           </Link>
         ))}

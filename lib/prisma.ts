@@ -15,11 +15,8 @@ export default prisma;
 
 export async function getArticleById(id: string) {
   return prisma.article.findUnique({
-    where: { id },
+    where: { id, view: true },
     include: {
-      contents: { orderBy: { order: "asc" } },
-      images: { orderBy: { order: "asc" } },
-      videos: { orderBy: { order: "asc" } },
       category: true,
     },
   });
@@ -33,9 +30,8 @@ export async function getCategoryById(id: string) {
 
 export async function getArticlesByCategoryId(categoryId: string) {
   return prisma.article.findMany({
-    where: { categoryId },
+    where: { categoryId, view: true },
     include: {
-      contents: true,
       category: true,
     },
   });
@@ -44,6 +40,9 @@ export async function getArticles() {
   return prisma.article.findMany({
     include: {
       category: true,
+    },
+    orderBy: {
+      createdAt: "desc",
     },
   });
 }
@@ -56,17 +55,16 @@ export async function getCategoriesWithLastTwoArticles() {
   const categories = await prisma.category.findMany({
     include: {
       articles: {
+        where: { view: true },
         orderBy: {
           createdAt: "desc",
         },
         take: 2,
-        include: {
-          contents: true,
-        },
       },
     },
   });
 
+  console.log("Categories with articles:", categories);
   return categories.map((category) => ({
     ...category,
     articles: category.articles.map((article) => ({
@@ -86,7 +84,6 @@ export async function getLatestArticles() {
     },
     take: 3,
     include: {
-      contents: true,
       category: true,
     },
   });

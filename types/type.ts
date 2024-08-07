@@ -1,9 +1,7 @@
 export interface Article {
   id: string;
   title: string;
-  contents: { text: string; order: number }[];
-  images?: { url: string; order: number }[];
-  videos?: { url: string; order: number }[];
+  content: string;
   createdAt: Date;
   categoryId: string;
   category: Category;

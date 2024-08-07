@@ -79,7 +79,7 @@
     font-family: "Radio Canada", sans-serif;
   }
   input {
-    @apply border rounded font-light py-1 px-3  w-full hover:shadow-secondary focus:shadow-secondary;
+    @apply border border-gray-300 rounded font-light py-1 px-3  w-full hover:shadow-secondary focus:shadow-secondary;
   }
 
   h1 {
@@ -94,7 +94,7 @@
     @apply mb-6 text-lg;
   }
 
-  h3.articleH3 {
+  h3 {
     @apply border-l-2 border-accent pl-3;
   }
   p {
@@ -104,28 +104,56 @@
     @apply block w-36 text-center bg-accent text-sm text-foreground py-2 px-3 rounded mt-2 font-medium hover:scale-105 transition-all duration-300 ease-in-out;
   }
 
-  ul.articleList {
-    @apply list-disc px-6 my-3 font-light;
+  ul {
+    @apply list-disc  my-3 font-light;
     list-style: none;
   }
 
-  ul.articleList li {
-    @apply text-gray-600;
+  ul li {
     position: relative;
     padding-left: 40px;
   }
 
-  ul.articleList li::before {
+  ul li::before {
     content: "";
     position: absolute;
     left: 0;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-60%);
     width: 20px;
     height: 20px;
     background-image: url("/bullet.svg");
     background-size: contain;
     background-repeat: no-repeat;
+  }
+  ul.header-li {
+    @apply my-0;
+  }
+  ul.header-li li {
+    position: static;
+    padding-left: 0px;
+  }
+
+  ul.header-li li::before {
+    content: none;
+    width: 0;
+    height: 0;
+    background-image: none;
+  }
+
+  ul.search-li {
+    @apply my-0;
+  }
+  ul.search-li li {
+    position: static;
+    padding-left: 15px;
+  }
+
+  ul.search-li li::before {
+    content: none;
+    width: 0;
+    height: 0;
+    background-image: none;
   }
 
   ol {
@@ -135,15 +163,42 @@
     @apply py-2;
   }
   table {
-    @apply my-6 border w-full rounded;
+    @apply my-6 border border-stone-200 w-full rounded;
   }
 
   thead {
-    @apply bg-gray-700 text-background;
+    @apply bg-foreground border border-foreground text-background;
   }
 
   th,
   td {
     @apply p-3 text-center;
+  }
+  .custom-quill .ql-container {
+    height: 500px;
+    overflow-y: auto;
+  }
+
+  .custom-quill .ql-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: white;
+  }
+
+  .article-content iframe {
+    @apply w-full h-[500px];
+  }
+
+  .article-content img {
+    @apply w-full max-h-96 object-cover my-12;
+  }
+
+  .modal {
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-lg transition-all duration-300 ease-in-out;
+  }
+
+  .overlay {
+    @apply fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 transition-all duration-300 ease-in-out;
   }
 }

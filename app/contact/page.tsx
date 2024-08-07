@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import insta from "@/public/network/insta.png";
 import facebook from "@/public/network/facebook.png";
 import linkedin from "@/public/network/linkedin.png";
@@ -6,61 +7,23 @@ import Image from "next/image";
 
 export default function Contact() {
   return (
-    <div className="flex flex-col mt-32 max-w-7xl m-auto py-16">
-      <div className="flex-1 px-6 text-center">
-        <h1 className="text-4xl pt-0">Contactez moi</h1>
-        <p>une question ? contactez moi</p>
-      </div>
-      <div className="flex-1 px-6 mt-12 w-full m-auto">
-        <form
-          action=""
-          className="text-center  p-12 shadow-lg border  rounded-lg"
-        >
-          <div className="flex gap-3">
-            <div>
-              <input
-                type="text"
-                placeholder="Nom"
-                className="w-full mb-5 p-2 rounded border border-gray-300 shadow-lg "
-              />
-
-              <input
-                type="text"
-                placeholder="Email"
-                required
-                className="w-full mb-5 p-2 rounded border border-gray-300  shadow-lg"
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                placeholder="Prénom"
-                required
-                className="w-full mb-5 p-2 rounded border border-gray-300  shadow-lg"
-              />
-
-              <input
-                type="number"
-                placeholder="Numéro"
-                required
-                className="w-full mb-5 p-2 rounded border border-gray-300  shadow-lg"
-              />
-            </div>
-          </div>
-          <textarea
-            placeholder="Votre message..."
-            rows={5}
-            required
-            className="w-full mb-5 p-2 rounded border border-gray-300 h-64  shadow-lg"
-          />
-
-          <input
-            type="submit"
-            className=" max-w-24 m-auto mt-3 border-none hover:cursor-pointer bg-accent   hover:scale-105 transition duration-200 ease-in-out  shadow-lg"
-          />
-        </form>
-
-        <div className="mt-20">
+    <div className="flex sm:flex-row flex-col mt-32 max-w-5xl m-auto py-16">
+      <div className="flex-1 px-6 text-left">
+        <h1 className="text-4xl pt-0">Contact</h1>
+        <p>
+          Merci d'avoir visité notre page de contact. Nous apprécions votre
+          intérêt pour *Nom* et aimerions avoir de vos nouvelles.
+        </p>
+        <p>
+          Si vous avez des questions ou des commentaires sur nos produits ou
+          services, n'hésitez pas à nous contacter. Vous pouvez nous contacter
+          via le formulaire fourni sur cette page ou sur les réseaux.
+        </p>
+        <p>
+          Nous ferons de notre mieux pour répondre à votre demande dans les plus
+          brefs délais. Merci encore pour votre intérêt !
+        </p>
+        <div className="mt-20 mb-20">
           <div className="flex justify-center gap-10 m-auto">
             <a href="">
               <Image src={insta} alt="" width={40} height={40} />
@@ -76,6 +39,51 @@ export default function Contact() {
             </a>
           </div>
         </div>
+      </div>
+      <div className="flex-1 px-6 w-full m-auto">
+        <form
+          action=""
+          className="text-left  p-6 shadow-lg bg-orange-100 rounded"
+        >
+          <h2 className="text-2xl mb-1">Contactez moi</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas,
+            molestiae dicta rerum porro recusandae assumenda animi.
+          </p>
+          <div>
+            <input
+              type="text"
+              placeholder="Nom"
+              className="w-full mb-5 p-2 rounded border border-gray-300  "
+            />
+
+            <input
+              type="text"
+              placeholder="Prénom"
+              required
+              className="w-full mb-5 p-2 rounded border border-gray-300  "
+            />
+          </div>
+
+          <input
+            type="mail"
+            placeholder="Email"
+            required
+            className="w-full mb-5 p-2 rounded border border-gray-300  "
+          />
+
+          <textarea
+            placeholder="Votre message..."
+            rows={5}
+            required
+            className="w-full mb-5 p-2 rounded border border-gray-300 h-24 font-light "
+          />
+
+          <input
+            type="submit"
+            className=" max-w-24 m-auto mt-3 border-none hover:cursor-pointer bg-accent   hover:scale-105 transition duration-200 ease-in-out  shadow-lg"
+          />
+        </form>
       </div>
     </div>
   );

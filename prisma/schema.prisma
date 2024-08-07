@@ -12,42 +12,20 @@ datasource db {
 
 model Article {
   id          String    @id @default(cuid())
-  title       String
-  contents    Content[]
-  images      Image[]   @relation("ArticleImages")
-  videos      Video[]   @relation("ArticleVideos")
-  categoryId  String
-  category    Category  @relation(fields: [categoryId], references: [id])
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  title     String
+  content   String
+  category  Category @relation(fields: [categoryId], references: [id])
+  categoryId String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  view      Boolean  @default(false)
 }
 
-model Content {
-  id          String    @id @default(cuid())
-  text        String
-  order       Int
-  articleId   String
-  article     Article   @relation(fields: [articleId], references: [id])
-}
+
 
 model Category {
   id        String    @id @default(cuid())
   name      String
   articles  Article[]
 }
-
-model Image {
-  id        String    @id @default(cuid())
-  url       String
-  order     Int
-  articleId String
-  article   Article   @relation("ArticleImages", fields: [articleId], references: [id])
-}
-
-model Video {
-  id        String    @id @default(cuid())
-  url       String
-  order     Int
-  articleId String
-  article   Article   @relation("ArticleVideos", fields: [articleId], references: [id])
-}
+   

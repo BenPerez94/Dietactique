@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+
 import { getCategoriesWithLastTwoArticles } from "@/lib/prisma";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,9 +11,12 @@ import youtube from "@/public/network/youtube.png";
 import logo from "@/public/logo.svg";
 import Aside from "@/components/aside";
 import { Category, Article } from "@/types/type";
+import { Slice } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default async function Home() {
   const categories: Category[] = await getCategoriesWithLastTwoArticles();
+
   return (
     <div className="mt-32 ">
       {/* HERO */}
@@ -36,24 +40,20 @@ export default async function Home() {
       {/* CATEGORIES PREVIEW */}
 
       <div className="flex flex-col xl:flex-row max-w-7xl m-auto py-6 mb-6 px-3">
-        <div className="flex-2 lg:min-w-[849px]">
+        <div className="flex-2 lg:min-w-[849px] w-full">
           {categories.map((category) => (
             <div key={category.id}>
-              <h1>{category.name}</h1>
-              <div className="flex flex-col sm:flex-row maw-w-full pt-10 my-3 gap-12">
+              <h1 className="text-center xl:text-left">{category.name}</h1>
+              <div className="flex flex-col sm:flex-row maw-w-full justify-center pt-10 my-3 gap-12">
                 {category.articles?.map((article) => (
                   <Link href={`/article/${article.id}`} key={article.id}>
-                    <div className="flex flex-col border p-4  rounded-md lg:w-[400px]  shadow-lg shadow-gray-200/100 hover:border-accent hover:scale-105 transition-all duration-300">
+                    <div className="flex flex-col border p-4  rounded-md lg:w-[400px] shadow-lg shadow-gray-200/100 hover:border-accent hover:scale-105 transition-all duration-300">
                       <Image
                         src={test}
                         alt=""
                         className="h-64 w-full object-cover rounded-md mt-[-55px] bordered  shadow-md shadow-gray-300/100"
                       />
                       <h2 className="mt-6">{article.title}</h2>
-                      <p className="min-h-24 mb-3">
-                        {article.contents?.[0]?.text?.substring(0, 200) ?? ""}
-                        ...
-                      </p>
                     </div>
                   </Link>
                 ))}
