@@ -27,15 +27,22 @@ type AdminPageClientProps = {
   categories: Category[];
 };
 
+type DeletableItem = Article | Category;
+
+// Type guard pour vérifier que l'objet a une propriété id
+function hasId(item: any): item is { id: string } {
+  return item && typeof item.id === "string";
+}
+
 export default function AdminPageClient({
   articles,
   categories,
 }: AdminPageClientProps) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [itemToDelete, setItemToDelete] = useState(null);
-  const [itemType, setItemType] = useState("");
+  const [itemToDelete, setItemToDelete] = useState<DeletableItem | null>(null);
+  const [itemType, setItemType] = useState<"Article" | "Category" | "">("");
 
-  const openModal = (item: any, type: string) => {
+  const openModal = (item: DeletableItem, type: "Article" | "Category") => {
     setItemToDelete(item);
     setItemType(type);
     setModalIsOpen(true);
@@ -49,6 +56,11 @@ export default function AdminPageClient({
 
   const handleDelete = async () => {
     if (!itemToDelete || !itemType) return;
+
+    if (!hasId(itemToDelete)) {
+      console.error("L'élément sélectionné n'a pas d'identifiant");
+      return;
+    }
 
     const response = await fetch(`/api/delete${itemType}`, {
       method: "DELETE",
