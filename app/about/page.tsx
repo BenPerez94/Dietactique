@@ -13,10 +13,10 @@ export default function About() {
       <div className=" bg-orange-100 ">
         <div className="container flex">
           <div className="flex-1 py-36 px-10">
-            <h1 className="text-5xl font-medium pb-6">
+            <h1 className="text-5xl font-semibold pb-6">
               Tes coachs préférés pour une perte de poids réussie !
             </h1>
-            <p className="text-2xl">
+            <p className="text-2xl font-normal">
               <span className="font-medium">Élodie</span>, diététicienne et{" "}
               <span className="font-medium">Christophe</span>, Coach sportif.
               Tous deux diplômés, nous unissons nos forces et notre expérience
@@ -42,7 +42,7 @@ export default function About() {
       </div>
       <div className="py-24">
         <div className="container">
-          <p className="text-xl text-left py-12 px-24">
+          <p className="text-xl text-left py-12 px-24 font-normal">
             <span className="block py-6 font-semibold text-2xl">
               Bienvenue sur notre blog dédié à la perte de poids et au bien-être
               !
@@ -69,7 +69,7 @@ export default function About() {
           </div>
 
           <div className="flex-1 p-12 py-28">
-            <p className="text-lg  text-black font-normal">
+            <p className="text-lg  font-normal">
               Je m'appelle Christophe, j'ai 28 ans et je suis éducateur / coach
               sportif diplômé. <br />
               <br />
@@ -96,7 +96,7 @@ export default function About() {
         <div className="container flex px-24 justify-between">
           <div className="flex-1 py-12 px-12">
             <h2 className="text-2xl ">Mon rapport à l'alimentation </h2>
-            <p className="text-lg">
+            <p className="text-lg font-normal">
               Ah, l'alimentation ! Un sujet passionnant et complexe. <br />
               <br />
               Je ne vais pas vous mentir, mon rapport avec la nourriture n'a pas
@@ -132,7 +132,7 @@ export default function About() {
           </div>
           <div className="flex-1 text-left pl-24">
             <h2 className="text-3xl text-black ">Pourquoi ce blog ? </h2>
-            <p className="text-lg text-black font-normal">
+            <p className="text-lg  font-normal">
               Vous vous demandez peut-être pourquoi j'ai décidé de créer ce
               blog. La réponse est simple : je veux partager mon expérience et
               mes connaissances pour aider un maximum de personnes à retrouver
@@ -141,7 +141,7 @@ export default function About() {
               est de vous montrer qu'il est tout à fait possible de manger
               sainement tout en se faisant plaisir.
             </p>
-            <p className="text-lg text-black font-normal">
+            <p className="text-lg  font-normal">
               Je tiens également à vous montrer que pratiquer une activité
               physique régulière est essentiel, mais qu’il n'est pas nécessaire
               d'y consacrer des heures et des heures chaque semaine pour voir
@@ -174,7 +174,7 @@ export default function About() {
           </div>
 
           <div className="flex-1 p-12 pl-0 py-24">
-            <p className="text-lg  text-black">
+            <p className="text-lg  font-normal">
               Je m’appelle Élodie, je suis diététicienne-nutritionniste et
               passionnée par mon métier. <br />
               <br />

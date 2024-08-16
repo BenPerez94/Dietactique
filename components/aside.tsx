@@ -15,11 +15,12 @@ export default async function Aside() {
   return (
     <div className="flex xl:flex-col lg:flex-wrap flex-col lg:p-12 p-4  max-w-full xl:max-w-sm lg:w-full">
       <div className="mb-12 text-center xl:text-left m-auto xl:mx-0 xl:my-0">
-        <h2>Qui suis-je ?</h2>
-        <p className="text-sm">
-          Je m'appelle Christophe, coach sportif diplômé de 28 ans, expert en
-          perte de poids. Rejoignez-moi pour obtenir des conseils et astuces
-          afin de perdre du poids de manière rapide et durable !
+        <h2>Qui sommes-nous ?</h2>
+        <p className="text-md">
+          <span className="font-medium">Élodie</span>, diététicienne et{" "}
+          <span className="font-medium">Christophe</span>, Coach sportif. Tous
+          deux diplômés, nous unissons nos forces et notre expérience pour vous
+          aider à atteindre vos objectifs.
         </p>
         <Link href="/about" className="button mt-6 m-auto xl:mx-0">
           En savoir plus
@@ -27,9 +28,14 @@ export default async function Aside() {
       </div>
       <div className="mb-12 max-w-sm  text-center xl:text-left m-auto xl:mx-0 xl:my-12">
         <h2>NewsLetter</h2>
+        <p>
+          Soyez les premiers informés : inscrivez-vous à notre newsletter pour
+          recevoir des contenus exclusifs, nos meilleures actualités et conseils
+          directement dans votre boîte email.
+        </p>
         <form action="" className="mt-3">
           <input type="text" placeholder="Nom Prénom" className="mb-3" />
-          <input type="text" placeholder="Email" className="mb-3" />
+          <input type="text" placeholder="Email" className="mb-6" />
           <input
             type="submit"
             className="button cursor-pointer w-60  m-auto xl:mx-0"
@@ -39,13 +45,11 @@ export default async function Aside() {
       </div>
       <div className="mb-12   text-center xl:text-left ">
         <h2 className="mb-6">Suivez moi sur les réseaux</h2>
-        <div className="flex justify-center gap-4 m-auto ">
+        <div className="flex justify-left gap-4 m-auto ">
           <a href="">
             <Image src={insta} alt="" width={40} height={40} />
           </a>
-          <a href="">
-            <Image src={facebook} alt="" width={40} height={40} />
-          </a>
+
           <a href="">
             <Image src={linkedin} alt="" width={40} height={40} />
           </a>

@@ -10,7 +10,7 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 export const metadata: Metadata = {
-  title: "Dietactique",
+  title: "Chris Nutrition",
   description: "La nutrition qu'il vous faut",
 };
 

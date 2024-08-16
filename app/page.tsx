@@ -54,7 +54,7 @@ export default async function Home() {
                         className="h-64 w-full object-cover rounded-md mt-[-55px] bordered  shadow-md shadow-gray-300/100"
                       />
                       <h2 className="mt-6 mb-3 min-h-14">{article.title}</h2>
-                      <p>
+                      <p className="min-h-20">
                         {article.description
                           ? article.description.length > 100
                             ? `${article.description.slice(0, 100)}...`

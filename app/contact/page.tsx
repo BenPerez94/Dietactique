@@ -11,13 +11,17 @@ export default function Contact() {
       <div className="flex-1 px-6 text-left">
         <h1 className="text-4xl pt-0">Contact</h1>
         <p>
-          Merci d'avoir visité notre page de contact. Nous apprécions votre
-          intérêt pour *Nom* et aimerions avoir de vos nouvelles.
+          Merci beaucoup d’avoir pris le temps de visiter notre blog ! Si vous
+          avez des questions, des commentaires ou besoin de plus d’informations,
+          nous serions ravis de vous aider.
+          <br /> <br /> Contactez nous via ce formulaire. Nous ferons de notre
+          mieux pour vous répondre dans les plus brefs délais. Votre retour est
+          précieux et nous aide à améliorer le contenu de ce site.
         </p>
         <p>
-          Si vous avez des questions ou des commentaires sur nos produits ou
-          services, n'hésitez pas à nous contacter. Vous pouvez nous contacter
-          via le formulaire fourni sur cette page ou sur les réseaux.
+          Vous pouvez également nous retrouver sur les réseaux sociaux et nous
+          envoyer un message directement, ou encore vous abonner pour rester
+          informé des nouveautés. À très bientôt !
         </p>
         <p>
           Nous ferons de notre mieux pour répondre à votre demande dans les plus
@@ -28,9 +32,7 @@ export default function Contact() {
             <a href="">
               <Image src={insta} alt="" width={40} height={40} />
             </a>
-            <a href="">
-              <Image src={facebook} alt="" width={40} height={40} />
-            </a>
+
             <a href="">
               <Image src={linkedin} alt="" width={40} height={40} />
             </a>
@@ -40,16 +42,13 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div className="flex-1 px-6 w-full m-auto">
+      <div className="flex-1 px-6 w-full m-auto mt-0">
         <form
           action=""
           className="text-left  p-6 shadow-lg bg-orange-100 rounded"
         >
-          <h2 className="text-2xl mb-1">Contactez moi</h2>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas,
-            molestiae dicta rerum porro recusandae assumenda animi.
-          </p>
+          <h2 className="text-2xl mb-6">Contactez nous</h2>
+
           <div>
             <input
               type="text"

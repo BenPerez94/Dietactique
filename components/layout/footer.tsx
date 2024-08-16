@@ -18,9 +18,7 @@ export default function Footer() {
           <a href="">
             <Image src={insta} alt="" width={40} height={40} />
           </a>
-          <a href="">
-            <Image src={facebook} alt="" width={40} height={40} />
-          </a>
+
           <a href="">
             <Image src={linkedin} alt="" width={40} height={40} />
           </a>
@@ -30,7 +28,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col lg:flex-row m-auto lg:gap-20  gap-3 w-full  pt-12 justify-center">
           <Link href="/about" className="text-background text-center">
-            Qui sui-je ?
+            Qui sommes-nous ?
           </Link>
           <Link href="" className="text-background  text-center">
             Mention Légales
