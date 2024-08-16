@@ -17,6 +17,7 @@ type Category = {
 export default function AddArticle() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [description, setDescription] = useState(""); // Ajout de l'état pour la description
   const [categoryId, setCategoryId] = useState("");
   const [categories, setCategories] = useState<Category[]>([]);
   const [view, setView] = useState(false);
@@ -41,7 +42,7 @@ export default function AddArticle() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ title, content, categoryId, view }),
+        body: JSON.stringify({ title, content, description, categoryId, view }), // Inclure la description ici
       });
 
       if (!response.ok) {
@@ -54,6 +55,7 @@ export default function AddArticle() {
       toast.success("Article ajouté avec succès");
       setTitle("");
       setContent("");
+      setDescription(""); // Réinitialiser la description après l'ajout
       setCategoryId("");
       setView(false);
 
@@ -110,7 +112,7 @@ export default function AddArticle() {
             required
             className="border p-2 pr-6 rounded"
           >
-            <option>Séléctionner une catégorie</option>
+            <option>Sélectionner une catégorie</option>
             {categories.map((category) => (
               <option key={category.id} value={category.id}>
                 {category.name}
@@ -127,6 +129,17 @@ export default function AddArticle() {
             onChange={(e) => setTitle(e.target.value)}
             required
             placeholder="Titre de l'article"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="description">Description de l'article:</label>
+          <textarea
+            id="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="border p-2 rounded"
+            placeholder="Brève description de l'article"
           />
         </div>
 

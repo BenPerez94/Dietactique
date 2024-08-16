@@ -18,6 +18,7 @@ export default function EditArticle() {
   const { id } = useParams();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [description, setDescription] = useState(""); // Ajout de l'état pour la description
   const [categoryId, setCategoryId] = useState("");
   const [categories, setCategories] = useState<Category[]>([]);
   const [view, setView] = useState(false);
@@ -37,6 +38,7 @@ export default function EditArticle() {
       const data = await response.json();
       setTitle(data.title);
       setContent(data.content);
+      setDescription(data.description || ""); // Charger la description existante
       setCategoryId(data.categoryId);
       setView(data.view);
     };
@@ -53,7 +55,14 @@ export default function EditArticle() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ id, title, content, categoryId }),
+        body: JSON.stringify({
+          id,
+          title,
+          content,
+          description,
+          categoryId,
+          view,
+        }), // Inclure la description ici
       });
 
       if (!response.ok) {
@@ -62,7 +71,6 @@ export default function EditArticle() {
         return;
       }
 
-      const data = await response.json();
       toast.success("Article modifié avec succès");
       setTimeout(() => {
         router.push("/admin");
@@ -133,6 +141,17 @@ export default function EditArticle() {
             onChange={(e) => setTitle(e.target.value)}
             required
             placeholder="Titre de l'article"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="description">Description de l'article:</label>
+          <textarea
+            id="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="border p-2 rounded"
+            placeholder="Brève description de l'article"
           />
         </div>
 

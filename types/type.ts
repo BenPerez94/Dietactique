@@ -4,6 +4,7 @@ export interface Article {
   content: string;
   createdAt: Date;
   updatedAt: Date;
+  description: string | null;
   categoryId: string;
   category: Category;
 }

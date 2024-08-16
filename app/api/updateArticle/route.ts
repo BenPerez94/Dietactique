@@ -3,7 +3,8 @@ import prisma from "@/lib/prisma";
 
 export async function PUT(req: NextRequest) {
   try {
-    const { id, title, content, categoryId, view } = await req.json();
+    const { id, title, content, description, categoryId, view } =
+      await req.json();
 
     if (!id || !title || !content || !categoryId) {
       return NextResponse.json(
@@ -20,6 +21,7 @@ export async function PUT(req: NextRequest) {
       data: {
         title,
         content,
+        description,
         categoryId,
         view,
       },

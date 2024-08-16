@@ -3,7 +3,7 @@ import prisma from "@/lib/prisma";
 
 export async function POST(req: NextRequest) {
   try {
-    const { title, content, categoryId, view } = await req.json();
+    const { title, content, description, categoryId, view } = await req.json();
 
     if (!title || !content || !categoryId) {
       return NextResponse.json(
@@ -16,6 +16,7 @@ export async function POST(req: NextRequest) {
       data: {
         title,
         content,
+        description,
         categoryId,
         view: view || false,
       },
