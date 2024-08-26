@@ -73,7 +73,7 @@ function HeaderClient({ categories }: { categories: Category[] }) {
           <div className="lg:block flex-1 hidden">
             <nav
               className={`transition-all duration-300 ${
-                isScrolled ? "py-4" : "py-11"
+                isScrolled ? "py-4" : "py-12"
               }`}
             >
               <ul className="flex font-bold transition-all duration-300 list-none py-0  header-li">
@@ -84,7 +84,7 @@ function HeaderClient({ categories }: { categories: Category[] }) {
                   >
                     <Link
                       href={`/categories/${category.id}`}
-                      className="p-3 rounded text-lg     transition-all duration-300  "
+                      className="p-3 rounded text-md     transition-all duration-300  "
                     >
                       {category.name}
                     </Link>

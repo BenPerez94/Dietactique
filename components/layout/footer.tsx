@@ -36,6 +36,9 @@ export default function Footer() {
           <Link href="/contact" className="text-background text-center">
             Contact
           </Link>
+          <Link href="/coaching" className="text-background text-center">
+            Coaching
+          </Link>
         </div>
       </div>
       <div className="bg-muted text-center text-gray-300 font-light text-xs py-2">

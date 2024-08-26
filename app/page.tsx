@@ -30,8 +30,8 @@ export default async function Home() {
             className="m-auto w-[700px] pt-24 px-6 pb-6"
           />
           <p className="m-auto text-background text-xl p-3 px-8 max-w-3xl text-center">
-            Mon objectif : Vous guider vers le succès de votre perte de poids en
-            vous fournissant des conseils pour une alimentation plus saine et
+            Notre objectif : Vous guider vers le succès de votre perte de poids
+            en vous fournissant des conseils pour une alimentation plus saine et
             une meilleure hygiène de vie.
           </p>
         </div>
