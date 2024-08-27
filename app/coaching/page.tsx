@@ -471,7 +471,7 @@ export default function Coaching() {
             <Smile className="m-auto" size={42} />
           </div>
         </div>
-        <Link href="" className="button w-96 m-auto mt-12 shadow-lg">
+        <Link href="" className="button w-80 m-auto mt-12 shadow-lg">
           Je souhaite commencer ma transformation
         </Link>
       </div>

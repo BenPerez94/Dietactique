@@ -24,7 +24,7 @@
     --muted: 51 34% 9%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 54 69% 71%;
+    --accent: 54 82% 61%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -101,7 +101,7 @@
     @apply text-gray-600 mb-6 text-base font-light;
   }
   .button {
-    @apply block w-36 text-center bg-accent text-sm text-foreground py-2 px-3 rounded mt-2 font-medium hover:scale-105 transition-all duration-300 ease-in-out;
+    @apply block w-36 text-center bg-accent shadow-lg text-sm text-foreground py-2 px-3 rounded mt-2 font-medium hover:scale-105 transition-all duration-300 ease-in-out;
   }
 
   ul {
