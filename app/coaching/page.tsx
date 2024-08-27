@@ -33,11 +33,11 @@ export default function Coaching() {
     <div className="mt-32">
       <div className="py-12 bg-orange-100">
         <div className="container text-center px-18 ">
-          <h1 className="text-5xl ">
+          <h1 className="sm:text-5xl text-3xl">
             Perdre 5 kg de graisse en un mois tout en continuant à profiter de
             tes repas et sans t’entraîner 7j7 ?
           </h1>
-          <p className="px-48 text-xl">
+          <p className="xl:px-48 lg:px-24 sm:text-xl text-lg">
             Ça te parait inaccessible ? <br />
             <br />
             Tu as probablement tenté de nombreux régimes, t'interdisant certains
@@ -58,13 +58,13 @@ export default function Coaching() {
         </div>
       </div>
       <div className="py-12">
-        <div className="container text-center px-24">
-          <p className="px-48 text-xl mb-12">
+        <div className="container text-center sm:px-24">
+          <p className="xl:px-48 lg:px-24 text-xl mb-12">
             Depuis que nous sommes dans le monde du coaching et de la nutrition,
             nous avons remarqué que nous rencontrons tous les mêmes difficultés
             et les mêmes contraintes.
           </p>
-          <div className="flex gap-12">
+          <div className="flex flex-col lg:flex-row gap-12">
             <div className="flex-1 text-center py-12 px-6 bg-orange-100 rounded shadow-lg">
               <Clock4 className="m-auto mb-3" size={42} />
               <h2>Le manque de temps</h2>
@@ -132,11 +132,11 @@ export default function Coaching() {
         </div>
       </div>
       <div className="py-12 bg-orange-100">
-        <div className="container px-24 text-center">
+        <div className="container sm:px-24  text-center">
           <h2 className="text-4xl">
             Imagines un instant à quoi ressemblerait ta vie si…
           </h2>
-          <div className="flex gap-3 py-10">
+          <div className="flex flex-col lg:flex-row gap-3 py-10">
             <div className="flex-1 bg-background p-3 pt-6 rounded  shadow-lg">
               <PersonStanding className="m-auto mb-6" size={42} />
               <div className="flex flex-col gap-2">
@@ -195,7 +195,7 @@ export default function Coaching() {
         </div>
       </div>
       <div className="py-12">
-        <div className="container px-36 text-center">
+        <div className="container sm:px-36 text-center">
           <h2 className="text-4xl">
             En quoi notre accompagnement est-différent ?
           </h2>
@@ -204,7 +204,10 @@ export default function Coaching() {
             plus de résultats
           </p>
           <div className="relative bg-zinc-200 pt-5 pb-2 px-6 rounded shadow-lg mb-6">
-            <CheckCheck className="absolute right-10 top-5" size={30} />
+            <CheckCheck
+              className="absolute sm:right-10 right-3 top-5"
+              size={30}
+            />
             <h3 className="border-none">1. Une expertise avérée :</h3>
             <p>
               Nous avons des années d'expérience dans le domaine du coaching
@@ -216,7 +219,10 @@ export default function Coaching() {
             </p>
           </div>
           <div className="relative bg-zinc-200 pt-5 pb-2 px-6 rounded shadow-lg mb-6">
-            <NotebookPen className="absolute right-10 top-5" size={30} />
+            <NotebookPen
+              className="absolute sm:right-10 right-3 top-5"
+              size={30}
+            />
             <h3 className="border-none">2. Un suivi personnalisé :</h3>
             <p>
               Chaque individu est unique, et nous en sommes parfaitement
@@ -230,7 +236,10 @@ export default function Coaching() {
             </p>
           </div>
           <div className="relative bg-zinc-200 pt-5 pb-2 px-6 rounded shadow-lg mb-6">
-            <Handshake className="absolute right-10 top-5" size={30} />
+            <Handshake
+              className="absolute sm:right-10 right-3 top-5"
+              size={30}
+            />
             <h3 className="border-none">3. Sois accompagné et soutenu 7j7</h3>
             <p>
               Nous comprenons que le chemin vers ta transformation peut être
@@ -242,7 +251,10 @@ export default function Coaching() {
             </p>
           </div>
           <div className="relative bg-zinc-200 pt-5 pb-2 px-6 rounded shadow-lg mb-6">
-            <FileSliders className="absolute right-10 top-5" size={30} />
+            <FileSliders
+              className="absolute sm:right-10 right-3 top-5"
+              size={30}
+            />
             <h3 className="border-none">
               4. Un suivi régulier et ajustements :
             </h3>
@@ -255,7 +267,7 @@ export default function Coaching() {
             </p>
           </div>
           <div className="relative bg-zinc-200 pt-5 pb-2 px-6 rounded shadow-lg mb-6">
-            <Globe className="absolute right-10 top-5" size={30} />
+            <Globe className="absolute sm:right-10 right-3 top-5" size={30} />
             <h3 className="border-none">5. Une approche globale :</h3>
             <p>
               Nous ne nous contentons pas de te fournir des plans d'entraînement
@@ -267,7 +279,7 @@ export default function Coaching() {
             </p>
           </div>
           <div className="relative bg-zinc-200 pt-5 pb-2 px-6 rounded shadow-lg mb-6">
-            <Smile className="absolute right-10 top-5" size={30} />
+            <Smile className="absolute sm:right-10 right-3 top-5" size={30} />
             <h3 className="border-none">6. Une approche sans frustration :</h3>
             <p>
               Nous savons que les régimes restrictifs et les séances de sport
@@ -278,7 +290,7 @@ export default function Coaching() {
               sacrifices insurmontables.
             </p>
           </div>
-          <p className="text-3xl pt-12 font-semibold text-black px-12">
+          <p className="sm:text-3xl text-2xl pt-12 font-semibold text-black lg:px-12">
             En choisissant notre accompagnement, tu fais le choix de la qualité,
             de la bienveillance et de l'écoute. Tu ne seras jamais seul dans ta
             démarche, et nous serons là pour te guider, te motiver et célébrer
@@ -288,9 +300,9 @@ export default function Coaching() {
         </div>
       </div>
       <div className="py-12 bg-orange-100">
-        <div className="container px-24 text-center">
+        <div className="container lg:px-24 text-center">
           <h2 className="text-4xl">Foire aux questions (FAQ)</h2>
-          <div className="px-24 transition-all duration-500">
+          <div className="lg:px-24 transition-all duration-500">
             <div
               className="flex justify-between bg-neutral-200 shadow-sm border border-gray-300 p-2 rounded cursor-pointer mt-3"
               onClick={() => toggleQuestion("question1")}
@@ -432,7 +444,7 @@ export default function Coaching() {
         </div>
       </div>
       <div className="py-12">
-        <div className="container text-center px-64">
+        <div className="container text-center lg:px-64">
           <h2 className="text-4xl mb-12">Tu as maintenant 2 options :</h2>
           <div className="p-3 px-12 bg-orange-100 mb-6  shadow-lg rounded">
             <h3 className="border-none font-bold">Option 1</h3>
@@ -456,7 +468,7 @@ export default function Coaching() {
               Ne plus jamais avoir honte de ton corps. <br />
               Te sentir en pleine forme et améliorer ta santé.{" "}
             </p>
-            <Frown className="m-auto" size={42} />
+            <Smile className="m-auto" size={42} />
           </div>
         </div>
         <Link href="" className="button w-96 m-auto mt-12 shadow-lg">
