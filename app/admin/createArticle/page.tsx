@@ -125,8 +125,7 @@ export default function AddArticle() {
           <input
             type="file"
             id="mainImage"
-            accept="image/*"
-            onChange={(e) => setMainImage(e.target.files[0])} // Mise à jour de l'état avec le fichier sélectionné
+            accept="image/*" // Mise à jour de l'état avec le fichier sélectionné
           />
         </div>
         <div>
