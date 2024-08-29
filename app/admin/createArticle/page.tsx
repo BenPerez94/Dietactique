@@ -122,11 +122,7 @@ export default function AddArticle() {
         </div>
         <div>
           <label htmlFor="mainImage">Image principale :</label>
-          <input
-            type="file"
-            id="mainImage"
-            accept="image/*" // Mise à jour de l'état avec le fichier sélectionné
-          />
+          <input type="file" id="mainImage" accept="image/*" />
         </div>
         <div>
           <label htmlFor="title">Titre de l'article:</label>

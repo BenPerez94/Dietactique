@@ -31,7 +31,7 @@ export default function Coaching() {
 
   return (
     <div className="lg:mt-32 mt-20">
-      <div className="py-12 bg-orange-100">
+      <div className="py-12 bg-[#FFF5E6]">
         <div className="container text-center px-18 ">
           <h1 className="sm:text-5xl text-3xl">
             Perdre 5 kg de graisse en un mois tout en continuant à profiter de
@@ -65,7 +65,7 @@ export default function Coaching() {
             et les mêmes contraintes.
           </p>
           <div className="flex flex-col lg:flex-row gap-12">
-            <div className="flex-1 text-center py-12 px-6 bg-orange-100 rounded shadow-lg">
+            <div className="flex-1 text-center py-12 px-6 bg-[#FFF5E6] rounded shadow-lg">
               <Clock4 className="m-auto mb-3" size={42} />
               <h2>Le manque de temps</h2>
               <p>
@@ -83,7 +83,7 @@ export default function Coaching() {
                 <br /> Tu fais face à un nouveau problème…
               </p>
             </div>
-            <div className="flex-1 text-center py-12 px-6 bg-orange-100  rounded shadow-lg">
+            <div className="flex-1 text-center py-12 px-6 bg-[#FFF5E6]  rounded shadow-lg">
               <Lightbulb className="m-auto mb-3" size={42} />
               <h2>Le manque d’expérience</h2>
               <p>
@@ -104,7 +104,7 @@ export default function Coaching() {
                 Nous sommes là pour t'apporter tout cela et bien plus encore…
               </p>
             </div>
-            <div className="flex-1 text-center py-12 px-6 bg-orange-100  rounded shadow-lg">
+            <div className="flex-1 text-center py-12 px-6 bg-[#FFF5E6]  rounded shadow-lg">
               <BicepsFlexed className="m-auto mb-3" size={42} />
               <h2>Le manque motivation</h2>
               <p>
@@ -131,7 +131,7 @@ export default function Coaching() {
           <CoachingLink />
         </div>
       </div>
-      <div className="py-12 bg-orange-100">
+      <div className="py-12 bg-[#FFF5E6]">
         <div className="container sm:px-24  text-center">
           <h2 className="text-4xl">
             Imagines un instant à quoi ressemblerait ta vie si…

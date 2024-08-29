@@ -42,16 +42,16 @@ function HeaderClient({ categories }: { categories: Category[] }) {
   return (
     <>
       <header
-        className={`h-20 fixed w-full bg-background border-b shadow-sm z-50 transition-all duration-300 ${
+        className={`h-24 fixed w-full bg-background border-b shadow-sm z-50 transition-all duration-300 ${
           isScrolled ? "lg:h-24" : "lg:h-[132px]"
         }`}
       >
         <div className="border-b p-1 text-sm shadow-inset">
-          <div className="px-12 text-right flex justify-end">
+          <div className="lg:px-12 px-2 text-right flex justify-between lg:justify-end">
             <div className="flex-none button cursor-pointer p-0 mt-0">
               CAOCHING{" "}
             </div>
-            <div className="flex  justify-end gap-4 flex-none w-32">
+            <div className="flex  gap-4 flex-none w-32 justify-end">
               <a href="" className="my-auto">
                 <Image src={insta} alt="" width={16} height={16} />
               </a>
@@ -74,7 +74,7 @@ function HeaderClient({ categories }: { categories: Category[] }) {
             className="p-0 py-4 lg:hidden cursor-pointer"
             onClick={handleMenu}
           >
-            {isOpenMenu ? <X size={50} /> : <Menu size={50} />}
+            {isOpenMenu ? <X size={40} /> : <Menu size={40} />}
           </div>
           <div
             className={`transition-all duration-300 ${
@@ -88,7 +88,7 @@ function HeaderClient({ categories }: { categories: Category[] }) {
                 priority={true}
                 className={`h-auto  w-40 ${
                   isScrolled ? "lg:w-42" : "lg:w-60"
-                } pt-0 lg:pt-0 mr-12 transition-all duration-300`}
+                } pt-1 lg:pt-0 mr-12 transition-all duration-300`}
               />
             </Link>
           </div>
