@@ -30,7 +30,7 @@ export default function Coaching() {
   };
 
   return (
-    <div className="mt-32">
+    <div className="lg:mt-32 mt-20">
       <div className="py-12 bg-orange-100">
         <div className="container text-center px-18 ">
           <h1 className="sm:text-5xl text-3xl">
@@ -197,7 +197,7 @@ export default function Coaching() {
       <div className="py-12">
         <div className="container sm:px-36 text-center">
           <h2 className="text-4xl">
-            En quoi notre accompagnement est-différent ?
+            En quoi notre accompagnement est-il différent ?
           </h2>
           <p className="text-black font-normal text-lg">
             2 experts / 2 domaines complémentaires = 2 plans d’actions = 2 fois

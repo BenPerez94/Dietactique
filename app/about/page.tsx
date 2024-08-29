@@ -9,10 +9,10 @@ import about6 from "@/public/about/about6.jpg";
 /* eslint-disable react/no-unescaped-entities */
 export default function About() {
   return (
-    <div className="mt-32 text-lg">
+    <div className="lg:mt-32 mt-20 text-lg">
       <div className=" bg-orange-100 ">
-        <div className="container flex">
-          <div className="flex-1 py-36 px-10">
+        <div className="container flex flex-col lg:flex-row">
+          <div className="flex-1 lg:py-36 py-3 px-10">
             <h1 className="text-5xl font-semibold pb-6">
               Tes coachs préférés pour une perte de poids réussie !
             </h1>
@@ -30,19 +30,19 @@ export default function About() {
             <Image
               src={about}
               alt=""
-              className="rounded-full h-72 w-72 object-cover object-top mt-12 ml-56  border-accent border-2 drop-shadow-xl"
+              className="rounded-full h-72 w-72 object-cover object-top lg:mt-12 lg:ml-56 ml-32  border-accent border-2 drop-shadow-xl"
             />
             <Image
               src={about6}
               alt=""
-              className="rounded-full h-72 w-72 object-cover object-top ml-24 mt-[-70px] border-accent border-2  drop-shadow-xl"
+              className="rounded-full h-72 w-72 object-cover object-top lg:ml-24 ml-3 mt-[-70px] border-accent border-2  drop-shadow-xl"
             />
           </div>
         </div>
       </div>
-      <div className="py-24">
+      <div className="lg:py-24">
         <div className="container">
-          <p className="text-xl text-left py-12 px-24 font-normal">
+          <p className="text-xl text-left py-12 lg:px-24 font-normal">
             <span className="block py-6 font-semibold text-2xl">
               Bienvenue sur notre blog dédié à la perte de poids et au bien-être
               !
@@ -58,9 +58,9 @@ export default function About() {
           </p>
         </div>
       </div>
-      <div className="bg-orange-100 py-24">
-        <div className="container flex">
-          <div className="flex-1 py-20">
+      <div className="bg-orange-100 lg:py-24 py-12">
+        <div className="lg:container flex flex-col lg:flex-row">
+          <div className="flex-1 lg:py-20 py-3">
             <Image
               src={about5}
               alt=""
@@ -68,7 +68,7 @@ export default function About() {
             />
           </div>
 
-          <div className="flex-1 p-12 py-28">
+          <div className="flex-1 p-12 lg:py-28">
             <p className="text-lg  font-normal">
               Je m'appelle Christophe, j'ai 28 ans et je suis éducateur / coach
               sportif diplômé. <br />
@@ -92,9 +92,9 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className=" py-12 ">
-        <div className="container flex px-24 justify-between">
-          <div className="flex-1 py-12 px-12">
+      <div className="py-12 ">
+        <div className="container flex lg:flex-row flex-col lg:px-24 justify-between">
+          <div className="flex-1 lg:py-12 lg:px-12">
             <h2 className="text-2xl ">Mon rapport à l'alimentation </h2>
             <p className="text-lg font-normal">
               Ah, l'alimentation ! Un sujet passionnant et complexe. <br />
@@ -112,7 +112,7 @@ export default function About() {
               saine, une santé optimale et des performances sportives au top.
             </p>
           </div>
-          <div className="flex-1 py-10 px-0">
+          <div className="flex-1 lg:py-10 px-0">
             <Image
               src={about3}
               alt=""
@@ -121,8 +121,8 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className=" py-24 bg-orange-100">
-        <div className="container flex text-center  px-24 ">
+      <div className=" xl:py-24 py-12 bg-orange-100">
+        <div className="container flex xl:flex-row flex-col text-center  xl:px-24 ">
           <div className="">
             <Image
               src={about2}
@@ -130,16 +130,16 @@ export default function About() {
               className=" w-[480px] m-auto border-4 border-background shadow-lg"
             />
           </div>
-          <div className="flex-1 text-left pl-24">
+          <div className="flex-1 text-left lg:pl-24 mt-6 lg:mt-0">
             <h2 className="text-3xl text-black ">Pourquoi ce blog ? </h2>
             <p className="text-lg  font-normal">
               Vous vous demandez peut-être pourquoi j'ai décidé de créer ce
               blog. La réponse est simple : je veux partager mon expérience et
               mes connaissances pour aider un maximum de personnes à retrouver
               leur santé, mieux manger et se sentir bien dans leur corps. Et
-              attention, mieux manger ne veut pas dire se priver ! Mon objectif
-              est de vous montrer qu'il est tout à fait possible de manger
-              sainement tout en se faisant plaisir.
+              attention, mieux manger ne veut pas dire se priver ! Notre
+              objectif est de vous montrer qu'il est tout à fait possible de
+              manger sainement tout en se faisant plaisir.
             </p>
             <p className="text-lg  font-normal">
               Je tiens également à vous montrer que pratiquer une activité
@@ -154,18 +154,18 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className=" py-12 pt-24 container bg-background">
-        <p className="px-36 text-center font-normal text-xl">
+      <div className=" py-12 lg:pt-24 container bg-background">
+        <p className="lg:px-36 text-center font-normal text-xl">
           Convaincu que la clé d'une transformation réussie réside dans
           l'alliance du sport et de la nutrition, j'ai décidé de faire appel à
           Élodie. Diététicienne diplômée, Élodie vous apportera également son
           expérience et ses conseils pour vous aider à atteindre vos objectifs.
         </p>
       </div>
-      <div className="w-[700px] border m-auto border-accent"></div>
+      <div className="lg:w-[700px] border m-auto border-accent"></div>
       <div className="bg-back py-12 pt-0">
-        <div className="container flex">
-          <div className="flex-1 py-20">
+        <div className="container flex lg:flex-row flex-col">
+          <div className="flex-1 lg:py-20 py-6">
             <Image
               src={about4}
               alt=""
@@ -173,7 +173,7 @@ export default function About() {
             />
           </div>
 
-          <div className="flex-1 p-12 pl-0 py-24">
+          <div className="flex-1 lg:p-12 pl-0 lg:py-24">
             <p className="text-lg  font-normal">
               Je m’appelle Élodie, je suis diététicienne-nutritionniste et
               passionnée par mon métier. <br />

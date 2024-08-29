@@ -15,6 +15,7 @@ model Article {
   title     String
   content   String
   description String? 
+  mainImage   String?
   category  Category @relation(fields: [categoryId], references: [id])
   categoryId String
   createdAt DateTime @default(now())

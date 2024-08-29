@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function Contact() {
   return (
-    <div className="flex sm:flex-row flex-col mt-32 max-w-5xl m-auto py-16">
+    <div className="flex sm:flex-row flex-col lg:mt-32 mt-16 max-w-5xl m-auto py-16">
       <div className="flex-1 px-6 text-left">
         <h1 className="text-4xl pt-0">Contact</h1>
         <p>

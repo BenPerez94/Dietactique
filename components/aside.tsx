@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import insta from "@/public/network/insta.png";
-import facebook from "@/public/network/facebook.png";
 import linkedin from "@/public/network/linkedin.png";
 import youtube from "@/public/network/youtube.png";
 import Image from "next/image";
@@ -44,8 +43,8 @@ export default async function Aside() {
         </form>
       </div>
       <div className="mb-12   text-center xl:text-left ">
-        <h2 className="mb-6">Suivez moi sur les réseaux</h2>
-        <div className="flex justify-left gap-4 m-auto ">
+        <h2 className="mb-6">Suivez-moi sur les réseaux</h2>
+        <div className="flex xl:justify-left justify-center gap-4 m-auto ">
           <a href="">
             <Image src={insta} alt="" width={40} height={40} />
           </a>

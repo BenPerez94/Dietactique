@@ -7,6 +7,9 @@ import { Cross, Menu, Search, X } from "lucide-react";
 import Link from "next/link";
 import { Category } from "@/types/type";
 import SearchBar from "@/components/SearchBar";
+import insta from "@/public/network/insta.png";
+import linkedin from "@/public/network/linkedin.png";
+import youtube from "@/public/network/youtube.png";
 
 function HeaderClient({ categories }: { categories: Category[] }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,24 +42,43 @@ function HeaderClient({ categories }: { categories: Category[] }) {
   return (
     <>
       <header
-        className={`h-32 fixed w-full bg-background border shadow-sm z-50 transition-all duration-300 ${
-          isScrolled ? "lg:h-16" : "lg:h-32"
+        className={`h-20 fixed w-full bg-background border-b shadow-sm z-50 transition-all duration-300 ${
+          isScrolled ? "lg:h-24" : "lg:h-[132px]"
         }`}
       >
+        <div className="border-b p-1 text-sm shadow-inset">
+          <div className="px-12 text-right flex justify-end">
+            <div className="flex-none button cursor-pointer p-0 mt-0">
+              CAOCHING{" "}
+            </div>
+            <div className="flex  justify-end gap-4 flex-none w-32">
+              <a href="" className="my-auto">
+                <Image src={insta} alt="" width={16} height={16} />
+              </a>
+
+              <a href="" className="my-auto">
+                <Image src={linkedin} alt="" width={16} height={16} />
+              </a>
+              <a href="" className="my-auto">
+                <Image src={youtube} alt="" width={16} height={16} />
+              </a>
+            </div>
+          </div>
+        </div>
         <div
-          className={`flex max-w-full lg:px-12 h-32 px-2 m-auto justify-between transition-all duration-300 ${
-            isScrolled ? "lg:h-16" : "lg:h-32"
+          className={`flex max-w-full lg:px-12 h-24 px-2 m-auto justify-between transition-all duration-300 ${
+            isScrolled ? "lg:h-16" : "lg:h-24"
           }`}
         >
           <div
-            className="p-0 py-8 lg:hidden cursor-pointer"
+            className="p-0 py-4 lg:hidden cursor-pointer"
             onClick={handleMenu}
           >
-            {isOpenMenu ? <X size={60} /> : <Menu size={60} />}
+            {isOpenMenu ? <X size={50} /> : <Menu size={50} />}
           </div>
           <div
             className={`transition-all duration-300 ${
-              isScrolled ? "pt-0" : "pt-1"
+              isScrolled ? "pt-0" : "pt-0"
             } sm:flex-none`}
           >
             <Link href="/">
@@ -65,15 +87,15 @@ function HeaderClient({ categories }: { categories: Category[] }) {
                 alt=""
                 priority={true}
                 className={`h-auto  w-40 ${
-                  isScrolled ? "lg:w-42" : "lg:w-72"
-                } pt-6 lg:pt-0 mr-12 transition-all duration-300`}
+                  isScrolled ? "lg:w-42" : "lg:w-60"
+                } pt-0 lg:pt-0 mr-12 transition-all duration-300`}
               />
             </Link>
           </div>
           <div className="lg:block flex-1 hidden">
             <nav
               className={`transition-all duration-300 ${
-                isScrolled ? "py-4" : "py-12"
+                isScrolled ? "py-4" : "py-9"
               }`}
             >
               <ul className="flex font-bold transition-all duration-300 list-none py-0  header-li">
@@ -94,14 +116,14 @@ function HeaderClient({ categories }: { categories: Category[] }) {
             </nav>
           </div>
           <div
-            className={` flex-none  pr-12 xl:block hidden transition-all duration-300 ${
-              isScrolled ? "py-4" : "py-12"
+            className={` flex-none   xl:block hidden transition-all duration-300 ${
+              isScrolled ? "py-4" : "py-9"
             }`}
           >
             <SearchBar />
           </div>
           <div
-            className={`relative xl:hidden pt-12 transition-all duration-300 cursor-pointer ${
+            className={`relative xl:hidden lg:pt-12 pt-6 transition-all duration-300 cursor-pointer ${
               isScrolled ? "lg:pt-4" : ""
             }`}
             onClick={handleSearch}
@@ -110,9 +132,10 @@ function HeaderClient({ categories }: { categories: Category[] }) {
           </div>
         </div>
       </header>
+
       <div
         className={`${
-          isOpenMenu ? "top-32" : "mt-[-200px]"
+          isOpenMenu ? "top-20" : "mt-[-200px]"
         } transition-all duration-300 z-40 fixed w-full lg:hidden`}
       >
         <nav className="transition-all duration-300 py-0 w-full">
@@ -135,7 +158,7 @@ function HeaderClient({ categories }: { categories: Category[] }) {
       </div>
       <div
         className={`${
-          isOpenSearch ? "top-32" : "top-[-200px]"
+          isOpenSearch ? "top-20" : "top-[-200px]"
         } flex-none  fixed z-40  right-6 transition-all duration-300 py-4 lg:hidden`}
       >
         <SearchBar />

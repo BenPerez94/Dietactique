@@ -22,7 +22,7 @@ export default async function Categories({ params }: PageParams) {
   }
 
   return (
-    <div className="mt-32 ">
+    <div className="lg:mt-32 mt-20">
       {/* HERO */}
 
       <div className="flex flex-col py-20  bg-cat-pattern bg-cover bg-center relative">

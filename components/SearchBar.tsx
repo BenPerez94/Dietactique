@@ -50,7 +50,7 @@ const SearchBar = () => {
         <input
           type="search"
           placeholder="Rechercher..."
-          className="pl-8 w-80"
+          className="pl-8 w-72"
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
         />

@@ -32,7 +32,7 @@ export default async function ArticlePage({ params }: PageParams) {
       <Image
         src={test}
         alt="image de l'article"
-        className="h-96 w-full mt-32 object-cover"
+        className="h-96 w-full lg:mt-32 mt-20 object-cover"
       />
       <div className="flex xl:flex-row flex-col container">
         <div className="lg:flex-1 xl:p-6 lg:pt-12 mb-16">

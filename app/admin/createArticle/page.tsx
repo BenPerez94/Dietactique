@@ -121,6 +121,15 @@ export default function AddArticle() {
           </select>
         </div>
         <div>
+          <label htmlFor="mainImage">Image principale :</label>
+          <input
+            type="file"
+            id="mainImage"
+            accept="image/*"
+            onChange={(e) => setMainImage(e.target.files[0])} // Mise à jour de l'état avec le fichier sélectionné
+          />
+        </div>
+        <div>
           <label htmlFor="title">Titre de l'article:</label>
           <input
             type="text"
@@ -134,11 +143,12 @@ export default function AddArticle() {
 
         <div>
           <label htmlFor="description">Description de l'article:</label>
+          <br />
           <textarea
             id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="border p-2 rounded"
+            className="border p-2 rounded w-full"
             placeholder="Brève description de l'article"
           />
         </div>

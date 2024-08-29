@@ -18,7 +18,7 @@ export default async function Home() {
   const categories: Category[] = await getCategoriesWithLastTwoArticles();
 
   return (
-    <div className="mt-32 ">
+    <div className="mt-24 ">
       {/* HERO */}
 
       <div className="flex flex-col pb-32  bg-hero-pattern bg-cover bg-center relative">
