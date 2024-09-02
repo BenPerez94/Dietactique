@@ -48,9 +48,13 @@ function HeaderClient({ categories }: { categories: Category[] }) {
       >
         <div className="border-b p-1 text-sm shadow-inset">
           <div className="lg:px-12 px-2 text-right flex justify-between lg:justify-end">
-            <div className="flex-none button cursor-pointer p-0 mt-0">
-              CAOCHING{" "}
-            </div>
+            <Link
+              href="/coaching"
+              className="flex-none button cursor-pointer p-0 mt-0"
+            >
+              {" "}
+              Coaching
+            </Link>
             <div className="flex  gap-4 flex-none w-32 justify-end">
               <a href="" className="my-auto">
                 <Image src={insta} alt="" width={16} height={16} />

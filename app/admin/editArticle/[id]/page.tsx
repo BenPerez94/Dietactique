@@ -17,6 +17,7 @@ type Category = {
 export default function EditArticle() {
   const { id } = useParams();
   const [title, setTitle] = useState("");
+  const [mainImage, setMainImage] = useState("");
   const [content, setContent] = useState("");
   const [description, setDescription] = useState(""); // Ajout de l'état pour la description
   const [categoryId, setCategoryId] = useState("");
@@ -37,8 +38,9 @@ export default function EditArticle() {
       const response = await fetch(`/api/getArticle?id=${id}`);
       const data = await response.json();
       setTitle(data.title);
+      setMainImage(data.mainImage);
       setContent(data.content);
-      setDescription(data.description || ""); // Charger la description existante
+      setDescription(data.description || "");
       setCategoryId(data.categoryId);
       setView(data.view);
     };
@@ -58,11 +60,12 @@ export default function EditArticle() {
         body: JSON.stringify({
           id,
           title,
+          mainImage,
           content,
           description,
           categoryId,
           view,
-        }), // Inclure la description ici
+        }),
       });
 
       if (!response.ok) {
@@ -133,6 +136,18 @@ export default function EditArticle() {
           </select>
         </div>
         <div>
+          <label htmlFor="mainImage" className="block">
+            Image principale
+          </label>
+          <ReactQuill
+            value={mainImage}
+            onChange={setMainImage}
+            modules={{ toolbar: ["image"] }}
+            formats={["image"]}
+            className="custom-quill-image"
+          />
+        </div>
+        <div>
           <label htmlFor="title">Titre de l'article:</label>
           <input
             type="text"
@@ -184,7 +199,6 @@ export default function EditArticle() {
           Modifier
         </button>
       </form>
-      <Toaster expand={true} position="bottom-right" closeButton richColors />
     </div>
   );
 }

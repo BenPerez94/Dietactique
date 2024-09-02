@@ -10,8 +10,8 @@ import { Instagram, Youtube } from "lucide-react";
 export default function Footer() {
   return (
     <div className=" bg-foreground flex flex-col">
-      <div className="max-w-7xl m-auto flex flex-col justify-center py-6">
-        <div className="m-auto mb-6">
+      <div className="max-w-7xl m-auto flex flex-col justify-center py-6 pt-0">
+        <div className="m-auto mb-4">
           <Image src={logo} alt="logo du site" className="sm:w-[550px] w-96" />
         </div>
         <div className="flex gap-10 m-auto">
@@ -42,7 +42,8 @@ export default function Footer() {
         </div>
       </div>
       <div className="bg-muted text-center text-gray-300 font-light text-xs py-2">
-        Copyright 2024 © Dietactique - Réalisation Neblink
+        Copyright 2024 © Dietactique - Réalisation{" "}
+        <Link href="https://neblink.fr">Neblink</Link>
       </div>
     </div>
   );

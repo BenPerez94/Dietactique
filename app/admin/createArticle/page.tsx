@@ -16,8 +16,9 @@ type Category = {
 
 export default function AddArticle() {
   const [title, setTitle] = useState("");
+  const [mainImage, setMainImage] = useState("");
   const [content, setContent] = useState("");
-  const [description, setDescription] = useState(""); // Ajout de l'état pour la description
+  const [description, setDescription] = useState("");
   const [categoryId, setCategoryId] = useState("");
   const [categories, setCategories] = useState<Category[]>([]);
   const [view, setView] = useState(false);
@@ -42,7 +43,14 @@ export default function AddArticle() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ title, content, description, categoryId, view }), // Inclure la description ici
+        body: JSON.stringify({
+          title,
+          mainImage,
+          content,
+          description,
+          categoryId,
+          view,
+        }),
       });
 
       if (!response.ok) {
@@ -54,8 +62,9 @@ export default function AddArticle() {
       const data = await response.json();
       toast.success("Article ajouté avec succès");
       setTitle("");
+      setMainImage("");
       setContent("");
-      setDescription(""); // Réinitialiser la description après l'ajout
+      setDescription("");
       setCategoryId("");
       setView(false);
 
@@ -121,8 +130,16 @@ export default function AddArticle() {
           </select>
         </div>
         <div>
-          <label htmlFor="mainImage">Image principale :</label>
-          <input type="file" id="mainImage" accept="image/*" />
+          <label htmlFor="mainImage" className="block">
+            Image principale
+          </label>
+          <ReactQuill
+            value={mainImage}
+            onChange={setMainImage}
+            modules={{ toolbar: ["image"] }}
+            formats={["image"]}
+            className="custom-quill-image"
+          />
         </div>
         <div>
           <label htmlFor="title">Titre de l'article:</label>
@@ -177,7 +194,6 @@ export default function AddArticle() {
           Ajouter
         </button>
       </form>
-      <Toaster expand={true} position="top-center" closeButton richColors />
     </div>
   );
 }

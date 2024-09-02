@@ -40,16 +40,18 @@ export default async function Categories({ params }: PageParams) {
         {articles.map((article) => (
           <Link href={"/article/" + article.id} key={article.id}>
             <div className="flex flex-col border p-4  rounded-md w-[400px]  shadow-lg shadow-gray-200/100 mb-24 hover:border-accent hover:scale-105 transition-all duration-300">
-              <Image
-                src={test}
-                alt=""
-                className="h-64 w-full object-cover rounded-md mt-[-55px] bordered  shadow-md shadow-gray-300/100"
-              />
+              <div
+                className="h-64 w-full object-cover rounded-md mt-[-55px]
+                      bordered shadow-md shadow-gray-300/100 overflow-hidden miniature"
+                dangerouslySetInnerHTML={{
+                  __html: article.mainImage,
+                }}
+              ></div>
               <h2 className="mt-6 mb-3 min-h-14">{article.title}</h2>
-              <p className="min-h-20">
+              <p className="min-h-20 mb-0">
                 {article.description
-                  ? article.description.length > 100
-                    ? `${article.description.slice(0, 100)}...`
+                  ? article.description.length > 145
+                    ? `${article.description.slice(0, 145)}...`
                     : article.description
                   : "Aucune description disponible"}
               </p>

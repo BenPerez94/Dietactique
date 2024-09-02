@@ -5,6 +5,7 @@ import about3 from "@/public/about/about3.jpg";
 import about4 from "@/public/about/about4.jpg";
 import about5 from "@/public/about/about5.jpg";
 import about6 from "@/public/about/about6.jpg";
+import Link from "next/link";
 
 /* eslint-disable react/no-unescaped-entities */
 export default function About() {
@@ -22,9 +23,9 @@ export default function About() {
               Tous deux diplômés, nous unissons nos forces et notre expérience
               pour vous aider à atteindre vos objectifs.
             </p>
-            <button className="button w-64 mt-12 text-xl">
+            <Link href="/coaching" className="button w-64 mt-12 text-xl">
               Je veux un coaching
-            </button>
+            </Link>
           </div>
           <div className="flex-1 py-12 ">
             <Image
@@ -173,7 +174,7 @@ export default function About() {
             />
           </div>
 
-          <div className="flex-1 lg:p-12 pl-0 lg:py-24">
+          <div className="flex-1 lg:p-12 pl-0 lg:py-20">
             <p className="text-lg  font-normal">
               Je m’appelle Élodie, je suis diététicienne-nutritionniste et
               passionnée par mon métier. <br />
@@ -207,6 +208,9 @@ export default function About() {
             </p>
           </div>
         </div>
+        <Link href="/coaching" className="button w-64 mt-12 text-xl m-auto">
+          Je veux un coaching
+        </Link>
       </div>
     </div>
   );

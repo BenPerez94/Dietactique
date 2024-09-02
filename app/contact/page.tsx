@@ -1,11 +1,34 @@
 /* eslint-disable react/no-unescaped-entities */
+"use client";
 import insta from "@/public/network/insta.png";
 import facebook from "@/public/network/facebook.png";
 import linkedin from "@/public/network/linkedin.png";
 import youtube from "@/public/network/youtube.png";
 import Image from "next/image";
+import { toast } from "sonner";
+import { SendContact } from "@/lib/sendContact";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { MailCheck } from "lucide-react";
+import { FormData } from "@/types/type";
 
 export default function Contact() {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>();
+
+  const onSubmit: SubmitHandler<FormData> = async (dataForm) => {
+    SendContact(dataForm);
+    reset();
+    toast(
+      <div className="flex text-center justify-center text-white text-[15px]">
+        <MailCheck className="mr-3" color="white" />
+        Message envoyé !
+      </div>
+    );
+  };
   return (
     <div className="flex sm:flex-row flex-col lg:mt-32 mt-16 max-w-5xl m-auto py-16">
       <div className="flex-1 px-6 text-left">
@@ -46,6 +69,7 @@ export default function Contact() {
         <form
           action=""
           className="text-left  p-6 shadow-lg bg-orange-100 rounded"
+          onSubmit={handleSubmit(onSubmit)}
         >
           <h2 className="text-2xl mb-6">Contactez nous</h2>
 
@@ -54,6 +78,8 @@ export default function Contact() {
               type="text"
               placeholder="Nom"
               className="w-full mb-5 p-2 rounded border border-gray-300  "
+              {...register("nameContact", { required: true })}
+              required
             />
 
             <input
@@ -61,6 +87,7 @@ export default function Contact() {
               placeholder="Prénom"
               required
               className="w-full mb-5 p-2 rounded border border-gray-300  "
+              {...register("firstNameContact", { required: true })}
             />
           </div>
 
@@ -69,6 +96,7 @@ export default function Contact() {
             placeholder="Email"
             required
             className="w-full mb-5 p-2 rounded border border-gray-300  "
+            {...register("emailContact", { required: true })}
           />
 
           <textarea
@@ -76,6 +104,7 @@ export default function Contact() {
             rows={5}
             required
             className="w-full mb-5 p-2 rounded border border-gray-300 h-24 font-light "
+            {...register("messageContact", { required: true })}
           />
 
           <input

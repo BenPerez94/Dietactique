@@ -29,14 +29,15 @@ export default async function ArticlePage({ params }: PageParams) {
 
   return (
     <>
-      <Image
-        src={test}
-        alt="image de l'article"
-        className="h-96 w-full lg:mt-32 mt-20 object-cover"
-      />
+      <div
+        className="article-content"
+        dangerouslySetInnerHTML={{
+          __html: article.mainImage,
+        }}
+      ></div>
       <div className="flex xl:flex-row flex-col container">
         <div className="lg:flex-1 xl:p-6 lg:pt-12 mb-16">
-          <h2 className="text-4xl mt-[-140px] bg-background text-center  xl:p-6 pt-12 px-12 mb-8 shadow-lg border rounded-lg ">
+          <h2 className="text-4xl mt-[-140px] bg-background text-center  xl:p-6 pt-6 pb-3 px-12 mb-8 shadow-lg border rounded-lg ">
             {article.title}
             <span className="block text-foreground pt-2 text-lg font-light drop-shadow-sm">
               {article.category.name}
@@ -58,9 +59,6 @@ export default async function ArticlePage({ params }: PageParams) {
                 <Image src={insta} alt="" width={40} height={40} />
               </a>
               <a href="">
-                <Image src={facebook} alt="" width={40} height={40} />
-              </a>
-              <a href="">
                 <Image src={linkedin} alt="" width={40} height={40} />
               </a>
               <a href="">
@@ -76,12 +74,13 @@ export default async function ArticlePage({ params }: PageParams) {
               {articleCategory.slice(0, 3).map((articleSame) => (
                 <Link href={`${articleSame.id}`} key={articleSame.id}>
                   <div className="flex flex-col border p-4 mt-16 rounded-md lg:w-[250px]  shadow-lg shadow-gray-200/100 hover:border-accent hover:scale-105 transition-all duration-300">
-                    <Image
-                      src={test}
-                      alt=""
-                      className="h-40 w-full object-cover rounded-md mt-[-55px] bordered  shadow-md shadow-gray-300/100"
-                    />
-                    <h2>{articleSame.title}</h2>
+                    <div
+                      className="miniature h-40 w-full object-cover rounded-md mt-[-55px] bordered  shadow-md shadow-gray-300/100 overflow-hidden"
+                      dangerouslySetInnerHTML={{
+                        __html: article.mainImage,
+                      }}
+                    ></div>
+                    <h2 className="mb-0">{articleSame.title}</h2>
                   </div>
                 </Link>
               ))}

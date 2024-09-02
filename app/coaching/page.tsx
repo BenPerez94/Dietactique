@@ -31,7 +31,7 @@ export default function Coaching() {
 
   return (
     <div className="lg:mt-32 mt-20">
-      <div className="py-12 bg-[#FFF5E6]">
+      <div className="py-12 bg-secondary">
         <div className="container text-center px-18 ">
           <h1 className="sm:text-5xl text-3xl">
             Perdre 5 kg de graisse en un mois tout en continuant à profiter de
@@ -65,7 +65,7 @@ export default function Coaching() {
             et les mêmes contraintes.
           </p>
           <div className="flex flex-col lg:flex-row gap-12">
-            <div className="flex-1 text-center py-12 px-6 bg-[#FFF5E6] rounded shadow-lg">
+            <div className="flex-1 text-center py-12 px-6 bg-secondary rounded shadow-lg">
               <Clock4 className="m-auto mb-3" size={42} />
               <h2>Le manque de temps</h2>
               <p>
@@ -83,7 +83,7 @@ export default function Coaching() {
                 <br /> Tu fais face à un nouveau problème…
               </p>
             </div>
-            <div className="flex-1 text-center py-12 px-6 bg-[#FFF5E6]  rounded shadow-lg">
+            <div className="flex-1 text-center py-12 px-6 bg-secondary  rounded shadow-lg">
               <Lightbulb className="m-auto mb-3" size={42} />
               <h2>Le manque d’expérience</h2>
               <p>
@@ -104,7 +104,7 @@ export default function Coaching() {
                 Nous sommes là pour t'apporter tout cela et bien plus encore…
               </p>
             </div>
-            <div className="flex-1 text-center py-12 px-6 bg-[#FFF5E6]  rounded shadow-lg">
+            <div className="flex-1 text-center py-12 px-6 bg-secondary  rounded shadow-lg">
               <BicepsFlexed className="m-auto mb-3" size={42} />
               <h2>Le manque motivation</h2>
               <p>
@@ -131,7 +131,7 @@ export default function Coaching() {
           <CoachingLink />
         </div>
       </div>
-      <div className="py-12 bg-[#FFF5E6]">
+      <div className="py-12 bg-secondary">
         <div className="container sm:px-24  text-center">
           <h2 className="text-4xl">
             Imagines un instant à quoi ressemblerait ta vie si…
@@ -299,7 +299,7 @@ export default function Coaching() {
           <CoachingLink />
         </div>
       </div>
-      <div className="py-12 bg-orange-100">
+      <div className="py-12 bg-secondary">
         <div className="container lg:px-24 text-center">
           <h2 className="text-4xl">Foire aux questions (FAQ)</h2>
           <div className="lg:px-24 transition-all duration-500">
@@ -446,7 +446,7 @@ export default function Coaching() {
       <div className="py-12">
         <div className="container text-center lg:px-64">
           <h2 className="text-4xl mb-12">Tu as maintenant 2 options :</h2>
-          <div className="p-3 px-12 bg-orange-100 mb-6  shadow-lg rounded">
+          <div className="p-3 px-12 bg-secondary mb-6  shadow-lg rounded">
             <h3 className="border-none font-bold">Option 1</h3>
             <p className="text-black font-normal">
               Persévérer dans les mêmes habitudes en espérant des résultats
@@ -456,7 +456,7 @@ export default function Coaching() {
             </p>
             <Frown className="m-auto" size={42} />
           </div>
-          <div className="p-3 px-12 bg-orange-100  shadow-lg rounded">
+          <div className="p-3 px-12 bg-secondary  shadow-lg rounded">
             <h3 className="border-none font-bold">Option 2</h3>
             <p className="text-black font-normal">
               Commencer une vraie transformation. 

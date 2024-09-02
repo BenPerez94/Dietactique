@@ -18,7 +18,7 @@
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 54 69% 85%;
+    --secondary: 37 100% 94%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 51 34% 9%;
@@ -205,5 +205,16 @@
 
   .shadow-inset {
     box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  .miniature p {
+    @apply m-0 mx-[-15px] p-0;
+  }
+  .miniatureAside p {
+    @apply m-0 mx-[-35px] p-0;
+  }
+
+  .toaster li {
+    @apply p-3 bg-green-600 border border-green-700;
   }
 }

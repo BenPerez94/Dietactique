@@ -39,7 +39,7 @@ export default async function Home() {
 
       {/* CATEGORIES PREVIEW */}
 
-      <div className="flex flex-col xl:flex-row max-w-7xl m-auto py-6 mb-6 px-3">
+      <div className="flex flex-col xl:flex-row max-w-7xl m-auto py-6 mb-6 px-3 gap-20">
         <div className="flex-2 lg:min-w-[849px] w-full">
           {categories.map((category) => (
             <div key={category.id}>
@@ -48,16 +48,19 @@ export default async function Home() {
                 {category.articles?.map((article) => (
                   <Link href={`/article/${article.id}`} key={article.id}>
                     <div className="flex flex-col border p-4  rounded-md lg:w-[400px] shadow-lg shadow-gray-200/100 hover:border-accent hover:scale-105 transition-all duration-300">
-                      <Image
-                        src={test}
-                        alt=""
-                        className="h-64 w-full object-cover rounded-md mt-[-55px] bordered  shadow-md shadow-gray-300/100"
-                      />
+                      <div
+                        className="h-64 w-full object-cover rounded-md mt-[-55px]
+                      bordered shadow-md shadow-gray-300/100 overflow-hidden miniature"
+                        dangerouslySetInnerHTML={{
+                          __html: article.mainImage,
+                        }}
+                      ></div>
+
                       <h2 className="mt-6 mb-3 min-h-14">{article.title}</h2>
-                      <p className="min-h-20">
+                      <p className="min-h-20 m-0">
                         {article.description
-                          ? article.description.length > 100
-                            ? `${article.description.slice(0, 100)}...`
+                          ? article.description.length > 145
+                            ? `${article.description.slice(0, 145)}...`
                             : article.description
                           : "Aucune description disponible"}
                       </p>

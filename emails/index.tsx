@@ -1,11 +1,5 @@
 import { Tailwind, Html } from "@react-email/components";
-
-interface FormData {
-  nameContact: string;
-  emailContact: string;
-  numberContact: string;
-  messageContact: string;
-}
+import { FormData } from "@/types/type";
 
 export default function Email(dataForm: FormData) {
   return (
@@ -34,7 +28,7 @@ export default function Email(dataForm: FormData) {
             <p className="m-0">
               <strong>Numéro:</strong>
             </p>
-            <p className="m-0 mb-6">{dataForm.numberContact}</p>
+            <p className="m-0 mb-6">{dataForm.firstNameContact}</p>
           </div>
 
           <div className="mr-3">

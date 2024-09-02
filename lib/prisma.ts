@@ -79,6 +79,9 @@ export async function getCategoriesWithLastTwoArticles() {
 
 export async function getLatestArticles() {
   return prisma.article.findMany({
+    where: {
+      view: true,
+    },
     orderBy: {
       createdAt: "desc",
     },

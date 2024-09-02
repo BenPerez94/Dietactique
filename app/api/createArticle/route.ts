@@ -3,11 +3,12 @@ import prisma from "@/lib/prisma";
 
 export async function POST(req: NextRequest) {
   try {
-    const { title, content, description, categoryId, view } = await req.json();
+    const { title, mainImage, content, description, categoryId, view } =
+      await req.json();
 
-    if (!title || !content || !categoryId) {
+    if (!title || !mainImage || !content || !categoryId) {
       return NextResponse.json(
-        { error: "Le titre, le contenu et la catégorie sont requis" },
+        { error: "Le titre, l'image, le contenu et la catégorie sont requis" },
         { status: 400 }
       );
     }
@@ -15,6 +16,7 @@ export async function POST(req: NextRequest) {
     const newArticle = await prisma.article.create({
       data: {
         title,
+        mainImage,
         content,
         description,
         categoryId,
