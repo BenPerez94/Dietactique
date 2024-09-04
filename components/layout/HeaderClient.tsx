@@ -139,7 +139,7 @@ function HeaderClient({ categories }: { categories: Category[] }) {
 
       <div
         className={`${
-          isOpenMenu ? "top-20" : "mt-[-200px]"
+          isOpenMenu ? "top-24" : "mt-[-200px]"
         } transition-all duration-300 z-40 fixed w-full lg:hidden`}
       >
         <nav className="transition-all duration-300 py-0 w-full">
@@ -147,7 +147,7 @@ function HeaderClient({ categories }: { categories: Category[] }) {
             {categories.map((category) => (
               <li
                 key={category.id}
-                className="p-6 border-b bg-foreground text-white transition-all duration-300"
+                className="p-6  bg-foreground text-white transition-all duration-300"
               >
                 <Link
                   href={`/categories/${category.id}`}
@@ -162,7 +162,7 @@ function HeaderClient({ categories }: { categories: Category[] }) {
       </div>
       <div
         className={`${
-          isOpenSearch ? "top-20" : "top-[-200px]"
+          isOpenSearch ? "top-24" : "top-[-200px]"
         } flex-none  fixed z-40  right-6 transition-all duration-300 py-4 lg:hidden`}
       >
         <SearchBar />

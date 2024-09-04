@@ -39,7 +39,7 @@ export default async function Categories({ params }: PageParams) {
       <div className="flex flex-wrap pt-24 max-w-7xl m-auto gap-5 px-3">
         {articles.map((article) => (
           <Link href={"/article/" + article.id} key={article.id}>
-            <div className="flex flex-col border p-4  rounded-md w-[400px]  shadow-lg shadow-gray-200/100 mb-24 hover:border-accent hover:scale-105 transition-all duration-300">
+            <div className="flex flex-col border p-4  rounded-md lg:w-[400px] w-full  shadow-lg shadow-gray-200/100 mb-24 hover:border-accent hover:scale-105 transition-all duration-300">
               <div
                 className="h-64 w-full object-cover rounded-md mt-[-55px]
                       bordered shadow-md shadow-gray-300/100 overflow-hidden miniature"

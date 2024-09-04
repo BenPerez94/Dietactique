@@ -10,7 +10,7 @@ interface AsideClientProps {
 
 export default function AsideClient({ latestArticles }: AsideClientProps) {
   return (
-    <div className=" lg:p-12 lg:pt-16 p-4">
+    <div className=" lg:p-12 lg:pr-0 lg:pt-16 p-4">
       <div className="mb-12 text-center xl:text-left m-auto xl:mx-0 xl:my-0 ">
         <h2>Qui sommes-nous ?</h2>
         <p className="text-md">
