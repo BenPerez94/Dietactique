@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { Toaster } from "sonner";
+import ClientWrapper from "@/components/clientWrapper";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -30,7 +31,7 @@ export default function RootLayout({
       >
         <Header />
         <Toaster richColors className="toaster" />
-        {children}
+        <ClientWrapper>{children}</ClientWrapper>
         <Footer />
       </body>
     </html>

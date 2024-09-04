@@ -26,7 +26,7 @@ export default function Email(dataForm: FormData) {
           </div>
           <div>
             <p className="m-0">
-              <strong>Numéro:</strong>
+              <strong>Prénom:</strong>
             </p>
             <p className="m-0 mb-6">{dataForm.firstNameContact}</p>
           </div>

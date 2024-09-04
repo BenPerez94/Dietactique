@@ -2,14 +2,13 @@
 import { getArticleById, getArticlesByCategoryId } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import test from "@/public/test.jpg";
 import insta from "@/public/network/insta.png";
-import facebook from "@/public/network/facebook.png";
 import linkedin from "@/public/network/linkedin.png";
 import youtube from "@/public/network/youtube.png";
 import Link from "next/link";
 import Aside from "@/components/aside";
 import { Category, Article } from "@/types/type";
+
 interface PageParams {
   params: {
     id: string;
@@ -55,13 +54,13 @@ export default async function ArticlePage({ params }: PageParams) {
 
           <div className="mt-20">
             <div className="flex justify-center gap-10 m-auto">
-              <a href="">
+              <a href="https://www.instagram.com/christophem910?igsh=N2dleG44dmp6MzNq&utm_source=qr">
                 <Image src={insta} alt="" width={40} height={40} />
               </a>
-              <a href="">
+              <a href="https://www.linkedin.com/in/christophe-martin-coach-sportif">
                 <Image src={linkedin} alt="" width={40} height={40} />
               </a>
-              <a href="">
+              <a href="https://youtube.com/@christophemartin5552?si=i0lF6zI6SjlMTBjf">
                 <Image src={youtube} alt="" width={40} height={40} />
               </a>
             </div>

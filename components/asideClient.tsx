@@ -3,6 +3,10 @@
 import NewsletterForm from "./formNewsLetter";
 import Link from "next/link";
 import { Article } from "@/types/type";
+import insta from "@/public/network/insta.png";
+import linkedin from "@/public/network/linkedin.png";
+import youtube from "@/public/network/youtube.png";
+import Image from "next/image";
 
 interface AsideClientProps {
   latestArticles: Article[];
@@ -31,6 +35,30 @@ export default function AsideClient({ latestArticles }: AsideClientProps) {
           directement dans votre boîte email.
         </p>
         <NewsletterForm />
+      </div>
+      <div className="mb-12 text-center xl:text-left">
+        <h2>Réseaux sociaux</h2>
+        <div className="flex  gap-12 flex-none w-full justify-center">
+          <a
+            href="https://www.instagram.com/christophem910?igsh=N2dleG44dmp6MzNq&utm_source=qr"
+            className="my-auto"
+          >
+            <Image src={insta} alt="" width={40} height={40} />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/christophe-martin-coach-sportif"
+            className="my-auto"
+          >
+            <Image src={linkedin} alt="" width={40} height={40} />
+          </a>
+          <a
+            href="https://youtube.com/@christophemartin5552?si=i0lF6zI6SjlMTBjf"
+            className="my-auto"
+          >
+            <Image src={youtube} alt="" width={40} height={40} />
+          </a>
+        </div>
       </div>
       <div className="mb-12 text-center xl:text-left">
         <h2 className="mb-6">Derniers articles</h2>
