@@ -1,6 +1,8 @@
 import { getArticles, getCategories } from "@/lib/prisma";
 import AdminPageClient from "@/components/AdminPageClient";
 
+export const revalidate = 0;
+
 export default async function AdminPage() {
   const articlesFromDB = await getArticles();
   const categories = await getCategories();

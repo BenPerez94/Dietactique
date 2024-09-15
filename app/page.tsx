@@ -14,6 +14,8 @@ import { Category, Article } from "@/types/type";
 import { Slice } from "lucide-react";
 import { useEffect, useState } from "react";
 
+export const revalidate = 0;
+
 export default async function Home() {
   const categories: Category[] = await getCategoriesWithLastTwoArticles();
 
