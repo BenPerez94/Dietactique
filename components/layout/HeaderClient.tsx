@@ -63,10 +63,10 @@ function HeaderClient({ categories }: { categories: Category[] }) {
                 <NavigationMenuItem className="before:hidden">
                   <NavigationMenuTrigger>Coachings</NavigationMenuTrigger>
                   <NavigationMenuContent className="p-3">
-                    <Link href="" className="button w-72 mb-3">
+                    <Link href="/coaching" className="button w-72 mb-3">
                       Coaching perte de poids
                     </Link>
-                    <Link href="" className="button w-72 ">
+                    <Link href="/coachingTransfo" className="button w-72 ">
                       Transformation physique
                     </Link>
                   </NavigationMenuContent>

@@ -27,7 +27,10 @@ export default async function ArticlePreviewPage({ params }: PageParams) {
   }
 
   const category = article?.category?.id || "";
-  const articleCategory: Article[] = await getArticlesByCategoryId(category);
+  const articleCategory: Article[] = await getArticlesByCategoryId(
+    category,
+    id
+  );
 
   return (
     <>

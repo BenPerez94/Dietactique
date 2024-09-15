@@ -24,7 +24,10 @@ export default async function ArticlePage({ params }: PageParams) {
   }
 
   const category = article?.category?.id || "";
-  const articleCategory: Article[] = await getArticlesByCategoryId(category);
+  const articleCategory: Article[] = await getArticlesByCategoryId(
+    category,
+    id
+  );
 
   return (
     <>
