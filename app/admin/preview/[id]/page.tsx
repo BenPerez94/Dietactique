@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import {
   getArticleForPreviewById,
-  getArticlesByCategoryId,
+  getArticlesByCategoryIdArticle,
 } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -27,7 +27,7 @@ export default async function ArticlePreviewPage({ params }: PageParams) {
   }
 
   const category = article?.category?.id || "";
-  const articleCategory: Article[] = await getArticlesByCategoryId(
+  const articleCategory: Article[] = await getArticlesByCategoryIdArticle(
     category,
     id
   );

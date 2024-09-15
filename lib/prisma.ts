@@ -36,7 +36,15 @@ export async function getCategoryById(id: string) {
   });
 }
 
-export async function getArticlesByCategoryId(
+export async function getArticlesByCategoryId(categoryId: string) {
+  return prisma.article.findMany({
+    where: { categoryId, view: true },
+    include: {
+      category: true,
+    },
+  });
+}
+export async function getArticlesByCategoryIdArticle(
   categoryId: string,
   currentArticleId: string
 ) {

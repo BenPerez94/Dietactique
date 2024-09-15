@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { getArticleById, getArticlesByCategoryId } from "@/lib/prisma";
+import { getArticleById, getArticlesByCategoryIdArticle } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import insta from "@/public/network/insta.png";
@@ -24,7 +24,7 @@ export default async function ArticlePage({ params }: PageParams) {
   }
 
   const category = article?.category?.id || "";
-  const articleCategory: Article[] = await getArticlesByCategoryId(
+  const articleCategory: Article[] = await getArticlesByCategoryIdArticle(
     category,
     id
   );
