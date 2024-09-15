@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 export default function AddArticle() {
   return (
     <div className=" mt-40 container p-6 border">
