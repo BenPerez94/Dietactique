@@ -10,6 +10,16 @@ import SearchBar from "@/components/SearchBar";
 import insta from "@/public/network/insta.png";
 import linkedin from "@/public/network/linkedin.png";
 import youtube from "@/public/network/youtube.png";
+import { cn } from "@/lib/utils";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
 function HeaderClient({ categories }: { categories: Category[] }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,13 +58,21 @@ function HeaderClient({ categories }: { categories: Category[] }) {
       >
         <div className="border-b p-1 text-sm shadow-inset">
           <div className="lg:px-12 px-2 text-right flex justify-between lg:justify-end">
-            <Link
-              href="/coaching"
-              className="flex-none button cursor-pointer p-0 mt-0"
-            >
-              {" "}
-              Coaching
-            </Link>
+            <NavigationMenu>
+              <NavigationMenuList className="h-1">
+                <NavigationMenuItem className="before:hidden">
+                  <NavigationMenuTrigger>Coachings</NavigationMenuTrigger>
+                  <NavigationMenuContent className="p-3">
+                    <Link href="" className="button w-72 mb-3">
+                      Coaching perte de poids
+                    </Link>
+                    <Link href="" className="button w-72 ">
+                      Transformation physique
+                    </Link>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
             <div className="flex  gap-4 flex-none w-32 justify-end">
               <a href="" className="my-auto">
                 <Image src={insta} alt="" width={16} height={16} />

@@ -21,6 +21,14 @@ export async function getArticleById(id: string) {
     },
   });
 }
+export async function getArticleForPreviewById(id: string) {
+  return prisma.article.findUnique({
+    where: { id },
+    include: {
+      category: true,
+    },
+  });
+}
 
 export async function getCategoryById(id: string) {
   return prisma.category.findUnique({
@@ -64,7 +72,6 @@ export async function getCategoriesWithLastTwoArticles() {
     },
   });
 
-  console.log("Categories with articles:", categories);
   return categories.map((category) => ({
     ...category,
     articles: category.articles.map((article) => ({

@@ -71,10 +71,8 @@ export default function AdminPageClient({
     });
 
     if (response.ok) {
-      // Rafraîchir la page ou mettre à jour l'état local pour supprimer l'élément de la liste
-      window.location.reload(); // Simple refresh for now
+      window.location.reload();
     } else {
-      // Gérer les erreurs
       console.error("Erreur lors de la suppression");
     }
 
@@ -84,43 +82,11 @@ export default function AdminPageClient({
   return (
     <div className="flex mt-36 container px-6 mb-12">
       <div className="px-6 w-full border py-6">
-        <h2>Gestion des Catégories</h2>
-        <Link href="admin/createCategory" className="button w-48">
-          Créer une Catégorie
+        <h2>NewsLetter</h2>
+        <Link href="/admin/newsletter" className="button w-48">
+          Ecrire une NewsLetter
         </Link>
-
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <th className="w-1/2 text-left text-background">
-                  Nom de la catégorie
-                </th>
-
-                <th className="w-1/12 text-background">Modifier</th>
-              </tr>
-            </thead>
-            <tbody>
-              {categories.map((categorie) => (
-                <tr
-                  key={categorie.id}
-                  className="odd:bg-stone-100 even:bg-stone-200"
-                >
-                  <th className="text-left">{categorie.name}</th>
-
-                  <td className="flex border-gray-200">
-                    <Edit className="m-auto" />
-                    <Trash2
-                      className="m-auto cursor-pointer"
-                      color="#7f190e"
-                      onClick={() => openModal(categorie, "Category")}
-                    />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <br />
         <hr />
         <br />
         <h2>Gestion des articles</h2>
@@ -147,7 +113,11 @@ export default function AdminPageClient({
                   key={article.id}
                   className="odd:bg-stone-100 even:bg-stone-200"
                 >
-                  <th className="text-left">{article.title}</th>
+                  <th className="text-left">
+                    <Link href={`/admin/preview/${article.id}`}>
+                      {article.title}
+                    </Link>
+                  </th>
                   <td className="text-center">
                     {article.view && <Eye className="m-auto" />}
                   </td>
