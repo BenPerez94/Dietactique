@@ -42,6 +42,9 @@ export async function getArticlesByCategoryId(categoryId: string) {
     include: {
       category: true,
     },
+    orderBy: {
+      createdAt: "desc",
+    },
   });
 }
 export async function getArticlesByCategoryIdArticle(
