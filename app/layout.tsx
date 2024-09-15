@@ -12,8 +12,8 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 export const metadata: Metadata = {
-  title: "Chris Nutrition",
-  description: "La nutrition qu'il vous faut",
+  title: "ChrisNutrition : Comment perdre du poids",
+  description: "La nutrition qu'il vous faut ",
 };
 
 export default function RootLayout({

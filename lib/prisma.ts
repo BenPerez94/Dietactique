@@ -118,3 +118,13 @@ export async function getLatestArticles() {
     },
   });
 }
+
+export async function getAllNewsletterSubscribers() {
+  const subscribers = await prisma.newsLetter.findMany({
+    orderBy: {
+      name: "asc",
+    },
+  });
+
+  return subscribers;
+}

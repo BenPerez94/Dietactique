@@ -41,12 +41,12 @@ export default async function Home() {
 
       {/* CATEGORIES PREVIEW */}
 
-      <div className="flex flex-col xl:flex-row max-w-7xl m-auto py-6 mb-6 px-3 gap-20">
+      <div className="flex flex-col xl:flex-row container m-auto py-6 mb-6 px-3">
         <div className="flex-2 lg:min-w-[849px] w-full">
           {categories.map((category) => (
             <div key={category.id}>
-              <h1 className="text-center xl:text-left">{category.name}</h1>
-              <div className="flex flex-col sm:flex-row maw-w-full justify-center pt-10 my-3 gap-12">
+              <h1 className="text-center text-4xl ">{category.name}</h1>
+              <div className="flex flex-col lg:flex-row maw-w-full justify-center pt-10 my-3 gap-12">
                 {category.articles?.map((article) => (
                   <Link href={`/article/${article.id}`} key={article.id}>
                     <div className="flex flex-col border p-4  rounded-md lg:w-[400px] shadow-lg shadow-gray-200/100 hover:border-accent hover:scale-105 transition-all duration-300">
@@ -58,8 +58,12 @@ export default async function Home() {
                         }}
                       ></div>
 
-                      <h2 className="mt-6 mb-3 min-h-14">{article.title}</h2>
-                      <p className="min-h-20 m-0">
+                      <h2 className="mt-6 mb-3 min-h-[84px] overflow-hidden">
+                        {article.title.length > 110
+                          ? `${article.title.slice(0, 110)}...`
+                          : article.title}
+                      </h2>
+                      <p className="min-h-20 m-0 overflow-hidden">
                         {article.description
                           ? article.description.length > 145
                             ? `${article.description.slice(0, 145)}...`

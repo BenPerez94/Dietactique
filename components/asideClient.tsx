@@ -74,8 +74,10 @@ export default function AsideClient({ latestArticles }: AsideClientProps) {
                     }}
                   ></div>
                   <div className="flex-1 relative">
-                    <h3 className="lg:text-sm text-md py-1 font-bold border-none pl-0">
-                      {latestArticle.title}
+                    <h3 className="lg:text-base text-base py-1 font-bold border-none pl-0 mb-0 max-h-[100px] overflow-hidden">
+                      {latestArticle.title.length > 110
+                        ? `${latestArticle.title.slice(0, 110)} ...`
+                        : latestArticle.title}
                     </h3>
                     <p className="text-[11px] leading-4 my-1"></p>
                   </div>

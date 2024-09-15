@@ -433,10 +433,15 @@ export default function Coaching() {
               <div className="mb-4">
                 <p className="text-left bg-background p-4 px-6 m-2 shadow-lg border italic mt-0">
                   Pour te lancer, il te suffit de remplir{" "}
-                  <Link href="">ce questionnaire</Link> pour bénéficier d’un
-                  bilan offert avec moi. Cela me permettra de mieux comprendre
-                  tes besoins et de définir ensemble le plan d'action le plus
-                  adapté pour toi.
+                  <Link
+                    href="https://docs.google.com/forms/d/1Nc_GuoEwp0WTiwRc8Vnvu26VUhTQM1SwBZ58TE-d9PE/viewform?edit_requested=true"
+                    className="font-bold"
+                  >
+                    ce questionnaire
+                  </Link>{" "}
+                  pour bénéficier d’un bilan offert avec moi. Cela me permettra
+                  de mieux comprendre tes besoins et de définir ensemble le plan
+                  d'action le plus adapté pour toi.
                 </p>
               </div>
             )}

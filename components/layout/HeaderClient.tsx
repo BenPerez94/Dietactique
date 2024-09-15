@@ -32,6 +32,9 @@ function HeaderClient({ categories }: { categories: Category[] }) {
   const handleSearch = () => {
     setIsOpenSearch(!isOpenSearch);
   };
+  const closeMenu = () => {
+    setIsOpenMenu(!isOpenMenu);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -170,6 +173,7 @@ function HeaderClient({ categories }: { categories: Category[] }) {
                 <Link
                   href={`/categories/${category.id}`}
                   className="p-3 rounded  text-lg     transition-all duration-300  "
+                  onClick={closeMenu}
                 >
                   {category.name}
                 </Link>

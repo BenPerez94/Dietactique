@@ -150,6 +150,7 @@ export default function AddArticle() {
             onChange={(e) => setTitle(e.target.value)}
             required
             placeholder="Titre de l'article"
+            maxLength={110}
           />
         </div>
 
@@ -162,6 +163,7 @@ export default function AddArticle() {
             onChange={(e) => setDescription(e.target.value)}
             className="border p-2 rounded w-full"
             placeholder="Brève description de l'article"
+            maxLength={135}
           />
         </div>
 

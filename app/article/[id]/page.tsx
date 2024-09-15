@@ -82,7 +82,9 @@ export default async function ArticlePage({ params }: PageParams) {
                         __html: article.mainImage,
                       }}
                     ></div>
-                    <h2 className="mb-0">{articleSame.title}</h2>
+                    <h2 className="mb-0 max-h-[112px] overflow-hidden text-lg">
+                      {articleSame.title}
+                    </h2>
                   </div>
                 </Link>
               ))}

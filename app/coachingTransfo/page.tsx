@@ -284,29 +284,6 @@ export default function CoachingTransfo() {
                 </p>
               </div>
             )}
-
-            <div
-              className="flex justify-between bg-neutral-200 shadow-sm border border-gray-300 p-2 rounded cursor-pointer mt-3"
-              onClick={() => toggleQuestion("question5")}
-            >
-              <h3 className="mb-0 border-none">Comment puis-je commencer ?</h3>
-              {openQuestion === "question5" ? (
-                <ChevronUp size={28} />
-              ) : (
-                <ChevronDown size={28} />
-              )}
-            </div>
-            {openQuestion === "question5" && (
-              <div className="mb-4">
-                <p className="text-left bg-background p-4 px-6 m-2 shadow-lg border italic mt-0">
-                  Pour te lancer, il te suffit de remplir{" "}
-                  <Link href="">ce questionnaire</Link> pour bénéficier d’un
-                  bilan offert avec moi. Cela me permettra de mieux comprendre
-                  tes besoins et de définir ensemble le plan d'action le plus
-                  adapté pour toi.
-                </p>
-              </div>
-            )}
           </div>
         </div>
       </div>
@@ -314,10 +291,16 @@ export default function CoachingTransfo() {
         <div className="container text-center lg:px-64">
           <h2 className="text-4xl mb-12">Comment puis-je commencer ?</h2>
           <p className="text-black font-normal">
-            Pour te lancer, il te suffit de remplir ce questionnaire pour
-            bénéficier d’un bilan offert avec moi. Cela me permettra de mieux
-            comprendre tes besoins et de définir ensemble le plan d'action le
-            plus adapté pour toi.
+            Pour te lancer, il te suffit de remplir{" "}
+            <Link
+              href="https://docs.google.com/forms/d/e/1FAIpQLSc2uJceDDOkOhNdBYIkYFQb87Hf2zDsk0chLE81jPzTSOeQJg/viewform?usp=sf_link"
+              className="font-bold"
+            >
+              ce questionnaire
+            </Link>{" "}
+            pour bénéficier d’un bilan offert avec moi. Cela me permettra de
+            mieux comprendre tes besoins et de définir ensemble le plan d'action
+            le plus adapté pour toi.
           </p>
         </div>
         <Link href="" className="button w-80 m-auto mt-12 shadow-lg">
